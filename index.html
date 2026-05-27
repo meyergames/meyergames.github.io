@@ -1,12 +1,566 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>:)</title>
-    <link rel="icon" type="image/x-icon" href="icon.png">
-  </head>
-  <body>
-    <div>:)</div>
-  </body>
-</html>
+<head>
+  <title>| meyer.games</title>
+  <link rel="icon" type="image/x-icon" href="index_files/icon.png">
+  <link rel="stylesheet" href="styles.css">
 
-<!-- just a simple page with an invisible icon to more neatly organise the Librewolf/Firefox toolbar -->
+  <script src="/js/lib/jquery.js"></script>
+  <script type="text/javascript" src="/js/content-filters.js"></script>
+  <script type="text/javascript" src="/js/collapse.js"></script>
+  <script type="text/javascript" src="/js/playsound.js"></script>
+  <script type="text/javascript" src="/js/project-tile-filter.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<!-- <div class="loadoverlay">
+  <img src="index_files/load-overlay-16x9.png" width="100%">
+</div> -->
+
+<body onload="initFilterables()">
+  <section class="page-header">
+
+    <nav></nav>
+
+    <header>
+      <img src="index_files/icon-064.png">
+      <!-- <img src="index_files/pixel-brush-test-trans-blue.png" width="75px"> -->
+      <h1>meyer.games</h1>
+      <br>
+
+      <header-bar>
+        <a href="index.html" style="text-decoration: none;">
+          <button class="nav-button custom-button-active">
+            🏠️<br>Home <!--(blog page, basically)-->
+          </button>
+        </a>
+        <a href="projects.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            🃏<br>Projects
+          </button>
+        </a>
+        <a href="friends.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            👬🏼<br>Friends
+          </button>
+        </a>
+        <a href="me.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            🧑🏼<br>Me
+          </button>
+        </a>
+      </header-bar>
+    </header>
+
+  </section>
+
+  <columns>
+    <button class="nav-arrow left">←</button>
+    <div>
+      <column class="sidebar">
+
+        <!-- <post>
+          <h3>Friends</h3>
+          <list>
+            <ul><a href="https://joppedekkers.com/">Joppe</a> 👀<br>Experimental Game Designer</ul>
+            <ul><a href="https://simondebruijne.com/">Simon</a> 🪐<br>Game/IX Developer</ul>
+          </list>
+        </post> -->
+
+        <post style="text-align: left">
+          <h3>Filter By Topic</h3>
+          <hr>
+          <ul class="contentFilterList">
+            <!-- <li><input type="checkbox" class="contentFilterChbox" onclick="toggleChboxGroup( this )"
+              checked style="margin-left: -20px">
+              <b>Updates</b>
+            </li> -->
+            <b>Updates</b>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" id="cf-home-announce" onclick="updateFilter()" checked>
+             📣 Announcements <span style="color: var(--colour-darken-25)">(1)</span>
+            </li>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" id="cf-home-progress" onclick="updateFilter()" checked>
+             🔔 Project Progress <span style="color: var(--colour-darken-25)">(1)</span>
+            </li>
+          </ul>
+          <ul class="contentFilterList">
+            <!-- <li><input type="checkbox" class="contentFilterChbox" onclick="toggleChboxGroup( this )" style="margin-left: -20px">
+              <b>Recommendations</b>
+            </li> -->
+            <b>Recommendations</b>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" id="cf-home-games" onclick="updateFilter()">
+             🎮️ Games <span style="color: var(--colour-darken-25)">(0)</span>
+            </li>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" id="cf-home-music" onclick="updateFilter()">
+             🎧️ Music <span style="color: var(--colour-darken-25)">(0)</span>
+            </li>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" id="cf-home-movies" onclick="updateFilter()">
+             📽️ Movies <span style="color: var(--colour-darken-25)">(0)</span>
+            </li>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" id="cf-home-books" onclick="updateFilter()">
+             📖 Books <span style="color: var(--colour-darken-25)">(0)</span>
+            </li>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" id="cf-home-food" onclick="updateFilter()">
+             🍲 Food <span style="color: var(--colour-darken-25)">(2)</span>
+            </li>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" id="cf-home-software" onclick="updateFilter()">
+             🌐 Software <span style="color: var(--colour-darken-25)">(0)</span>
+            </li>
+          </ul>
+          <ul class="contentFilterList">
+            <!-- <li><input type="checkbox" class="contentFilterChbox" onclick="toggleChboxGroup( this )" style="margin-left: -20px">
+              <b>Just for fun</b>
+            </li> -->
+            <b>Funny Ha Ha</b>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" id="cf-home-memes" onclick="updateFilter()">
+             🦖 Memes <span style="color: var(--colour-darken-25)">(0)</span>
+            </li>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" id="cf-home-ramblings" onclick="updateFilter()">
+             🗣️ Ramblings <span style="color: var(--colour-darken-25)">(0)</span>
+            </li>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" id="cf-home-ramblings" onclick="updateFilter()">
+             🐈️ Cat pics <span style="color: var(--colour-darken-25)">(0)</span>
+            </li>
+          </ul>
+        </post>
+        <!-- <post>
+          <h3>Things I Like</h3>
+          <ul>
+            <li><a href="about.html">Games</a> 🃏</li>
+            <li><a href="about.html">Music</a> 🎼</li>
+            <li><a href="about.html">Memes</a> 🐟️</li>
+          </ul>
+        </post> -->
+      </column>
+    </div>
+
+    <column id="filterablesContainer">
+
+      <post style="background-color: #eeb99a">
+        <div align="center">
+          <h3>⚠️ WORK AHEAD ⚠️</h3>
+          <p>This website is still under construction.<br>Not all features are functional, and a lot of content is still missing.</p>
+        </div>
+      </post>
+
+      <post class="filterable" id="cf-home-food">
+        <div class="postbar">
+          <h2 class="postbar-icon" onclick="toggleCollapse( this )">🍲</h2>
+          <p class="postbar-cat" onclick="toggleCollapse( this )">26/05/2026</p>
+          <h2 class="postbar-title" onclick="toggleCollapse( this )">Aubergine-tomato-lentil stew</h2>
+          <div class="postbar-ctrls">
+            <img src="index_files/ui/collapse-open.png" class="postbar-ctrl" onclick="toggleCollapse( this )">
+            <img src="index_files/ui/close-button.png" class="postbar-ctrl" onclick="hidePost( this )">
+          </div>
+        </div>
+
+        <post-content style="display: block">
+          <hr>
+
+          <!-- <br>
+          <p>My proudest recipe to date.</p>
+          <br>
+
+          <hr> -->
+
+          <br>
+          <div align="center">
+            <h1>Ingredients</h1>
+            <p>(serves 4 people)</p>
+          </div>
+
+          <h3>Tools</h3>
+          <input type="checkbox"> 🥘 1 big frying/wok pan</input>
+          <br>
+          <input type="checkbox"> 🥘 1 medium frying pan*</input>
+          <br><br>
+
+          <h3>Nutritional Base</h3>
+          <input type="checkbox"> 🥔 1kg gnocchi**</input>
+          <br>
+          <input type="checkbox"> 🍆 2-3 large eggplants</input>
+          <br>
+          <input type="checkbox"> 🌶️ 4-5 red bell peppers</input>
+          <br>
+          <input type="checkbox"> 🍅 6-8 tomatoes</input>, OR <input type="checkbox"> 🥫 2 cans of peeled tomatoes (~500g)</input>
+          <br>
+          <input type="checkbox"> 🥫 2 cans of (soaked) lentils (~500g)</input>
+          <br><br>
+
+          <h3>Extra Flavours</h3>
+          <!-- (don't worry if you don't have all of these) -->
+          <input type="checkbox"> 🫒 Plenty of (olive) oil</input>
+          <br>
+          <input type="checkbox"> 🧂 A decent amount of salt</input>
+          <br>
+          <input type="checkbox"> 🧅 2-3 large red onions</input>
+          <br>
+          <input type="checkbox"> 🧄 4-6 cloves of garlic</input>
+          <br>
+          <input type="checkbox"> 🌶️ 2-3 small dried chilli peppers</input>
+          <br>
+          <input type="checkbox"> 🌿 2-3 bay leaves</input>
+          <br>
+          <input type="checkbox"> 🌿 2 cinnamon sticks</input>
+          <br>
+          <input type="checkbox"> 🌿 Cumin, whole or powdered</input>
+          <br>
+          <input type="checkbox"> 🌿 Thyme, dried or fresh</input>
+          <br>
+          <input type="checkbox"> 🌿 Paprika powder</input>
+          <br>
+          <input type="checkbox"> 🍇 1-2 handfuls of raisins (optional)</input>
+          <br>
+          <input type="checkbox"> 🧃 Pomegranate syrup (agave syrup also works)</input>
+          <br><br>
+
+          <h3>Tzatziki (optional)</h3>
+          <input type="checkbox"> 🗑️ A grate</input>
+          <br>
+          <input type="checkbox"> 🗑️ A strainer</input>
+          <br>
+          <input type="checkbox"> 🥛 500g (plant-based) Greek-style yoghurt</input>
+          <br>
+          <input type="checkbox"> 🥒 1 cucumber</input>
+          <br>
+          <input type="checkbox"> 🧄 2-3 small cloves of garlic (or 1-2 big ones)</input>
+          <br>
+          <input type="checkbox"> 🌿 Dill, fresh or dried</input>
+          <br><br>
+
+          <hr>
+
+          <br>
+
+          <br>
+          <div align="center">
+            <h1>Instructions</h1>
+            <p>⏲️ 60-90 minutes</p>
+          </div>
+          <br>
+
+          <ol style="padding-right: 5%">
+            <li><input type="checkbox" class="checkbox-step">🔪 ← 🧅🧄🌶️<br>
+              Cut the onion (in quartered slices), garlic (as small as you prefer) and dried chilli peppers (in small shreds).
+              </input>
+            </li>
+            <br>
+            <li><input type="checkbox" class="checkbox-step">🗑️ ← 🥛🥒🌿 (Optional)</input><br>
+              If you're making the tzatziki, grate the cucumber and squeeze it dry with a strainer or a clean cloth, or even your hands. Mix it together with the yoghurt, dill and the raw extra garlic.
+            </li>
+            <br>
+            <li><input type="checkbox" class="checkbox-step">🥘 ← 🫒🧅🌶️🧂</input><br>
+              Pour a liberal amount of olive oil in a big, cold frying/wok pan that you have a lid for. Add the onions, chilli and a pinch of salt. Let it all warm slowly on low heat. (Note: the oil should rise high enough to cover the onions)
+            </li>
+            <br>
+            <li><input type="checkbox" class="checkbox-step">🔪 ← 🍆🌶️</input><br>
+              While the oil warms, cut the eggplants (in thick, quartered chunks - they will shrink!) and bell peppers (in rough, bite-sized chunks). Stir the onions every now and then.
+            </li>
+            <br>
+            <li><input type="checkbox" class="checkbox-step">🥘 ← 🧄🍆</input><br>
+              After about 10-15 minutes, the oily onions should be fragrant and soft. Add the garlic and eggplant. Stir while evenly spraying the eggplant pieces with a decent amount of salt, then put the lid on the pan. Let the mixture simmer until the eggplant is soft and shrunk - stir occasionally.
+            </li>
+            <br>
+            <li><input type="checkbox" class="checkbox-step">🔪 ← 🍅</input><br>
+              While the eggplant simmers, cut the (canned) tomatoes in rough, bite-sized chunks.
+            </li>
+            <br>
+            <li><input type="checkbox" class="checkbox-step">🥘 ← 🍅🌿</input><br>
+              Add the tomatoes to the mixture, along with the bay leaves, cinnamon sticks, cumin, thyme and paprika powder. Put the lid back on, then let it simmer for another 10-15 minutes.
+            </li>
+            <br>
+            <li><input type="checkbox" class="checkbox-step">🍳 ← 🥔</input><br>
+              While the mixture simmers, add (half of) the gnocchi to another frying pan with a little bit of olive oil, letting it bake on medium heat. Once the gnocchi turns crisp, taste it; if it's good, take it off the heat, and preferrably cover it up to keep it warm. Repeat for the other half of the gnocchi, unless your pan was big enough for all of it.
+            </li>
+            <br>
+            <li><input type="checkbox" class="checkbox-step">🥘 → 🎛️</input><br>
+              Taste the sauce; add more spices and/or salt according to taste.
+            </li>
+            <br>
+            <li><input type="checkbox" class="checkbox-step">🥘 ← 🫘🍇</input><br>
+              Drain the lentils, and add them to the mixture. If you like, add raisins as well. Let everything simmer for 2-3 more minutes.
+            </li>
+            <br>
+            <li><input type="checkbox" class="checkbox-step">🥘 ← 🧃</input><br>
+              If the flavour and softness of the vegetables is to your liking, turn off the heat. Spray and stir some pomegranate syrup throughout the whole, according to taste.
+            </li>
+            <br>
+            <li><input type="checkbox" class="checkbox-step">🥘 + 🥔 + 🥛 = 🍽️</input><br>
+              Serve with the gnocchi (and tzatziki). Eat tasty!
+            </li>
+            <br>
+          </ol>
+          <br>
+
+          <hr>
+
+          <br>
+          <p>* You can also bake the gnocchi in the oven, instead of frying it in a pan. This does take considerably longer, so you may want to do this after step 3 or 4, then skip step 8.</p>
+          <p>** You can also replace the gnocchi with (pearl) couscous, bulgur or rice.</p>
+          <br>
+
+          <hr>
+
+          <post-half>
+            <!-- <tag-container>
+              <p style="vertical-align: bottom">
+                <button class="tag">
+                  📣 General
+                </button>
+              </p>
+            </tag-container> -->
+          </post-half>
+          <post-half>
+            <p align="right">
+              <img src="index_files/icon-064.png">
+              <br>
+              posted on 26 may 2026
+              <br>
+              💌 <a href="mailto:daniel@meyer.games?subject=your aubergine-tomato-lentil stew">reply to this post</a>
+            </p>
+          </post-half>
+
+        </post-content>
+      </post>
+
+      <post class="filterable" id="cf-home-food">
+        <div class="postbar">
+          <h2 class="postbar-icon" onclick="toggleCollapse( this )">🍲</h2>
+          <p class="postbar-cat" onclick="toggleCollapse( this )">26/05/2026</p>
+          <h2 class="postbar-title" onclick="toggleCollapse( this )">Low-effort, uninspired rice and beans</h2>
+          <div class="postbar-ctrls">
+            <img src="index_files/ui/collapse-open.png" class="postbar-ctrl" onclick="toggleCollapse( this )">
+            <img src="index_files/ui/close-button.png" class="postbar-ctrl" onclick="hidePost( this )">
+          </div>
+        </div>
+
+        <post-content style="display: block">
+          <hr>
+
+          <br>
+          <div align="center">
+            <h1>Ingredients</h1>
+            <p>(serves 1 lazy bum for 2 meals)</p>
+          </div>
+
+          <h3>Tools</h3>
+          <input type="checkbox"> 🥘 1 cooking pan</input>
+          <br>
+          <input type="checkbox"> 🥘 1 small (frying) pan</input>
+          <br><br>
+
+          <h3>Nutritional Base</h3>
+          <input type="checkbox"> 🍚 1 cup of rice</input>
+          <br>
+          <input type="checkbox"> 🥫 1 can of white beans in tomato sauce</input>
+          <br><br>
+
+          <h3>Optional Extras</h3>
+          <input type="checkbox"> 🥬 2-3 handfuls of spinach (if you're feeling fancy)</input>
+          <br>
+          <input type="checkbox"> 🧅 1 large onion</input>, OR <input type="checkbox"> 🌿 onion powder</input>
+          <br>
+          <input type="checkbox"> 🧄 1-2 cloves of garlic</input>, OR <input type="checkbox"> 🌿 garlic powder</input>
+          <br>
+          <input type="checkbox"> 🌶️ 1 small dried chilli pepper</input>
+          <br>
+          <input type="checkbox"> 🍇 1-2 handfuls of raisins</input>
+          <br>
+          <input type="checkbox"> 🧀 A royal amount of nutritional yeast</input>
+          <br>
+          <input type="checkbox"> 🌿 <a href="https://www.ecosia.org/images?q=tajin+chilli+powder" target="_blank">Tajin</a></input>
+          <br><br>
+
+          <hr>
+
+          <br>
+
+          <br>
+          <div align="center">
+            <h1>Instructions</h1>
+            <p>⏲️ 18-20 minutes</p>
+          </div>
+          <br>
+
+          <ol style="padding-right: 5%">
+            <li><input type="checkbox" class="checkbox-step">🍚 ← 💧<br>
+              Add 1 cup of rice and 1.5-2 cups of water to a pan. Your flat finger should *just* fit between the top of the rice and the surface of the water. Bring the rice to a boil, then leave it on minimal heat with a lid on top for 10 minutes.
+              </input>
+            </li>
+            <br>
+            <li><input type="checkbox" class="checkbox-step">🔪🍳 ← 🧅🧄🌶️🥬 (Optional)</input><br>
+              If you're using onion, garlic or chilli, chop and add to a small (frying) pan on low heat with a bit of oil. Let it simmer for a few minutes. Add spinach if you fancy.
+            </li>
+            <br>
+            <li><input type="checkbox" class="checkbox-step">🍳 ← 🥫</input><br>
+              Toss the white beans in tomato sauce in the (frying) pan, slowly heating it. If you want, add onion powder, garlic powder and/or raisins at this point.
+            </li>
+            <br>
+            <li><input type="checkbox" class="checkbox-step">🍚 → 🧯</input><br>
+              After the rice has softly boiled for 10 minutes, turn off the heat and let it sit for another 8-10 minutes. Afterwards, the rice should have absorbed all the water.
+            </li>
+            <br>
+            <li><input type="checkbox" class="checkbox-step">🍚 + 🥫 = 🍽️</input><br>
+              Time to eat.<br>Optionally serve with nutritional yeast or <a href="https://www.ecosia.org/images?q=tajin+chilli+powder" target="_blank">Tajin</a>.
+            </li>
+            <br>
+          </ol>
+          <br>
+
+          <br>
+          <div align="center">
+            <img src="index_files/content/hungry.jpeg" style="border: 1px solid black">
+          </div>
+          <br>
+
+          <hr>
+
+          <post-half>
+            <!-- <tag-container>
+              <p style="vertical-align: bottom">
+                <button class="tag">
+                  📣 General
+                </button>
+              </p>
+            </tag-container> -->
+          </post-half>
+          <post-half>
+            <p align="right">
+              <img src="index_files/icon-064.png">
+              <br>
+              posted on 26 may 2026
+              <br>
+              💌 <a href="mailto:daniel@meyer.games?subject=your girl dinner">reply to this post</a>
+            </p>
+          </post-half>
+
+        </post-content>
+      </post>
+
+      <post class="filterable" id="cf-home-progress">
+        <div class="postbar">
+          <h2 class="postbar-icon" onclick="toggleCollapse( this )">🔔</h2>
+          <p class="postbar-cat" onclick="toggleCollapse( this )">25/05/2026</p>
+          <h2 class="postbar-title" onclick="toggleCollapse( this )">My first Android port</h2>
+          <div class="postbar-ctrls">
+            <img src="index_files/ui/collapse-open.png" class="postbar-ctrl" onclick="toggleCollapse( this )">
+            <img src="index_files/ui/close-button.png" class="postbar-ctrl" onclick="hidePost( this )">
+          </div>
+        </div>
+
+        <post-content style="display: block">
+          <hr>
+
+          <p>I've started progress on porting <b>10 Steps Ahead</b>, an arcade game I made as a school project in 2020</a>.</p>
+          <br>
+          <p align="center"><a href="https://daniel-meyer.itch.io/10-steps-ahead" target="_blank">Before</a><br>↓<br>✨ <a href="/projects/games/digital/10-steps-ahead/play.html" target="_blank">After</a> ✨</p>
+          <br>
+          <p>It's still missing some content, menus, and the old version's global highscore integration. That being said, the game itself can be fully played as intended!<br>Notable improvements include an improved spawning algorithm that rewards strategy, making games last longer if you use powerups optimally and make the totem waste its attacks. In other words: your success now relies more on skill than on RNG.</p>
+          <p>I've also implemented a daily seed, meaning you can retry the same level layout an infinite number of times on the same day. At some point, I'd like to add a "Daily" category to the highscores to accomodate this.</p>
+          <p>If you trust me and the app's 0 required permissions, you can download it here ;)</p>
+          <p></p>
+
+          <br>
+          <p align="center">
+            <a href="/projects/games/digital/10-steps-ahead/downloads/10 Steps Ahead.apk" style="text-decoration: none;">
+              <button class="custom-button">
+                📥️<br>Download APK
+              </button>
+            </a>
+          </p>
+          <br><hr><br>
+          <p>P.S. <a href="https://keepandroidopen.org/">Keep Android Open</a>!!! I do not plan on releasing any apps through Google's monopolistic app ecosystem. If not for my personal future in app development, <a href="https://keepandroidopen.org/cta/#consumers" target="_blank">fight back</a> for <a href="https://pixelunion.eu/blog/2026/03/google-closing-android-ecosystem/" target="_blank">your own right</a> to use and modify your phone as YOU please!</p>
+          <br>
+
+          <hr>
+
+          <post-half>
+            <!-- <tag-container>
+              <p style="vertical-align: bottom">
+                <button class="tag">
+                  📣 General
+                </button>
+              </p>
+            </tag-container> -->
+          </post-half>
+          <post-half>
+            <p align="right">
+              <img src="index_files/icon-064.png">
+              <br>
+              posted on 25 may 2026
+              <br>
+              💌 <a href="mailto:daniel@meyer.games?subject=10 Steps Ahead Android port">reply to this post</a>
+            </p>
+          </post-half>
+
+        </post-content>
+      </post>
+
+      <post class="filterable" id="cf-home-announce">
+        <div class="postbar">
+          <h2 class="postbar-icon" onclick="toggleCollapse( this )">📣</h2>
+          <p class="postbar-cat" onclick="toggleCollapse( this )">19/05/2026</p>
+          <h2 class="postbar-title" onclick="toggleCollapse( this )">My new website!!!</h2>
+          <div class="postbar-ctrls">
+            <img src="index_files/ui/collapse-open.png" class="postbar-ctrl" onclick="toggleCollapse( this )">
+            <img src="index_files/ui/close-button.png" class="postbar-ctrl" onclick="hidePost( this )">
+          </div>
+        </div>
+
+        <post-content style="display: block">
+          <hr>
+
+          <p>A new home for the things I make and do :)</p>
+          <p>Besides showcasing my projects, I'll be treating this website as a little social media experiment, where I'll be trying out some new(?) forms of staying in touch through the internet.</p>
+          <br>
+          <p>If you'd like to join me in this experiment, feel free to (at some point) subscribe to my (currently non-functional) personal mailing list. Which would mean: me sending you an email every now and then about things I worked on, cool new games / albums / recipes I discovered, my newest hyperfixation, pictures of my cats, a compilation of random shower thoughts... things like that.</p>
+          <p>While I do realise personal websites are not as relevant as they used to be - especially as a form of social media - I'm curious and stubborn enough to give it a shot anyway. If anything, I'll have a dedicated little echo chamber for my niche hobby projects ;)</p>
+
+          <br>
+          <hr>
+
+          <!-- <p><a href="posts/new-website.html">Read more...</a></p> -->
+          <post-half>
+            <!-- <tag-container>
+              <p style="vertical-align: bottom">
+                <button class="tag">
+                  📣 General
+                </button>
+              </p>
+            </tag-container> -->
+          </post-half>
+          <post-half>
+            <p align="right">
+              <img src="index_files/icon-064.png">
+              <br>
+              posted on 19 may 2026
+              <br>
+              💌 <a href="mailto:daniel@meyer.games?subject=your new website">reply to this post</a>
+            </p>
+          </post-half>
+        </post-content>
+      </post>
+
+    </column>
+    <button class="nav-arrow right">→</button>
+
+    <div id="sidebar-right"></div>
+    <script>
+      fetch('/reusable/sidebar-right.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('sidebar-right').innerHTML = data;
+      });
+    </script>
+
+  </columns>
+
+  <footer>
+    <p>💌 <a href="mailto:daniel@meyer.games">mail</a> | 🎮️ <a href="https://daniel-meyer.itch.io/" target="_blank">itch.io</a> | 🌐 <a href="https://github.com/meyergames/" target="_blank">github</a></p>
+  </footer>
+
+  <script src="/js/on-page-load.js"></script>
+</body>
+</html>

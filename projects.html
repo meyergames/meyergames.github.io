@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>| meyer.games</title>
+  <link rel="icon" type="image/x-icon" href="index_files/icon.png">
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="./js/lib/jquery.js"></script>
+  <script type="text/javascript" src="./js/content-filters.js"></script>
+  <script type="text/javascript" src="./js/collapse.js"></script>
+  <script type="text/javascript" src="./js/playsound.js"></script>
+  <script type="text/javascript" src="./js/project-tile-filter.js"></script>
+
+</head>
+
+<!-- <div class="loadoverlay">
+  <img src="index_files/load-overlay-16x9.png" width="100%">
+</div> -->
+
+<body onload="initTiles()">
+  <section>
+
+    <header>
+      <img src="index_files/icon-064.png">
+      <h1>meyer.games</h1>
+      <br>
+
+      <header-bar>
+        <a href="index.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            🏠️<br>Home <!--(blog page, basically)-->
+          </button>
+        </a>
+        <a href="projects.html" style="text-decoration: none;">
+          <button class="nav-button custom-button-active">
+            🃏<br>Projects
+          </button>
+        </a>
+        <a href="friends.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            👬🏼<br>Friends
+          </button>
+        </a>
+        <a href="me.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            🧑🏼<br>Me
+          </button>
+        </a>
+      </header-bar>
+    </header>
+
+  </section>
+
+  <columns>
+    <button class="nav-arrow left">←</button>
+    <div>
+      <column class="sidebar">
+
+        <post style="text-align: left">
+          <h3>Filter By Category</h3>
+          <hr>
+          <ul class="contentFilterList">
+            <!-- <li><input type="checkbox" class="contentFilterChbox" onclick="toggleChboxGroup( this )">
+              <b>Digital</b>
+            </li> -->
+            <b>Digital</b>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" 
+              id="cf-proj-vidya" onclick="updateFilter()" checked>
+               🎮️ Video Games <span style="color: var(--colour-darken-25)">(7)</span>
+             </li>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" 
+              id="cf-proj-mods" onclick="updateFilter()" checked>
+               🔧 Mods <span style="color: var(--colour-darken-25)">(2)</span>
+             </li>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" 
+              id="cf-proj-tech" onclick="updateFilter()" checked>
+               📟️ Tech <span style="color: var(--colour-darken-25)">(2)</span>
+             </li>
+          </ul>
+          <ul class="contentFilterList">
+            <!-- <li><input type="checkbox" class="contentFilterChbox" onclick="toggleChboxGroup( this )"
+              checked style="margin-left: -20px">
+              <b>Analog</b>
+            </li> -->
+            <b>Analog</b>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" 
+              id="cf-proj-board" onclick="updateFilter()" checked>
+               🎲 Board Games <span style="color: var(--colour-darken-25)">(3)</span>
+             </li>
+          </ul>
+          <ul class="contentFilterList">
+            <!-- <li><input type="checkbox" class="contentFilterChbox" onclick="toggleChboxGroup( this )" style="margin-left: -20px">
+              <b>Misc.</b>
+            </li> -->
+            <b>Misc.</b>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" 
+              id="cf-proj-docs" onclick="updateFilter()">
+               📜 Documents <span style="color: var(--colour-darken-25)">(0)</span>
+             </li>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" 
+              id="cf-proj-music" onclick="updateFilter()">
+               🎶 Music <span style="color: var(--colour-darken-25)">(3)</span>
+             </li>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" 
+              id="cf-proj-misc" onclick="updateFilter()">
+               🌻 Misc. <span style="color: var(--colour-darken-25)">(0)</span>
+             </li>
+          </ul>
+        </post>
+
+        <post style="text-align: left">
+          <h3>Filter By Work</h3>
+          <hr>
+          <ul class="contentFilterList">
+            <!-- <li><input type="checkbox" class="contentFilterChbox" onclick="toggleChboxGroup( this )">
+              <b>(De)select all</b>
+            </li> -->
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterC" 
+              id="cf-work-dsn" onclick="updateFilter()">
+               ⚙️ Design <span style="color: var(--colour-darken-25)">(13)</span>
+            </li>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterC" 
+              id="cf-work-dev" onclick="updateFilter()">
+               💻️ Programming <span style="color: var(--colour-darken-25)">(8)</span>
+            </li>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterC" 
+              id="cf-work-ux" onclick="updateFilter()">
+               🎛️ UX Design <span style="color: var(--colour-darken-25)">(6)</span>
+            </li>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterC" 
+              id="cf-work-writing" onclick="updateFilter()">
+               ✍🏻 Writing <span style="color: var(--colour-darken-25)">(6)</span>
+            </li>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterC" 
+              id="cf-work-visual" onclick="updateFilter()">
+               🎞️ Visuals <span style="color: var(--colour-darken-25)">(4)</span>
+            </li>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterC" 
+              id="cf-work-lead" onclick="updateFilter()">
+               📊 Group Leading <span style="color: var(--colour-darken-25)">(1)</span>
+            </li>
+          </ul>
+        </post>
+
+        <post style="text-align: left">
+          <h3>Filter By Status</h3>
+          <hr>
+          <ul class="contentFilterList">
+            <!-- <li><input type="checkbox" class="contentFilterChbox" onclick="toggleChboxGroup( this )" style="margin-left: -20px">
+              <b>(De)select all</b>
+            </li> -->
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterB" 
+              id="cf-status-released" onclick="updateFilter()">
+               🏡 Released <span style="color: var(--colour-darken-25)">(4)</span>
+             </li>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterB" 
+              id="cf-status-dev" onclick="updateFilter()">
+               🏗️ In Development <span style="color: var(--colour-darken-25)">(3)</span>
+            </li>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterB" 
+              id="cf-status-proto" onclick="updateFilter()">
+               🏚️ Prototype <span style="color: var(--colour-darken-25)">(9)</span>
+            </li>
+          </ul>
+        </post>
+
+        <!-- <post style="text-align: left">
+          <h3>Filter By Type</h3>
+          <ul>
+            <li><input type="checkbox" checked> 🧑🏼 Solo Projects</li>
+            <li><input type="checkbox" checked> 👬🏼 Collaborations</li>
+          </ul>
+        </post> -->
+      </column>
+    </div>
+
+    <column>
+
+      <post id="filterablesContainer" class="tileHolder">
+
+        <!-- <tilecontainer class="filterable" id="cf-proj-vidya cf-status-proto cf-work-dsn cf-work-dev cf-work-writing cf-work-visual cf-work-ux">
+          <div class="showhim">
+            <a href="projects/games/digital/acting-thinking-feeling-v2/play.html">
+              <tile>
+                <div class="tile-header">
+                  <h2>Acting, Thinking, Feeling</h2>
+                </div>
+                <div class="showhim">
+                  <img src="index_files/items/acting-thinking-feeling/preview-2.gif" width="100%" height="100%">
+                  <div class="showme">
+                    <p>A quirky card "battler" where you try to diffuse an emotional conflict between two friends.</p>
+                    <p>Made in Godot as my HKU Games graduation project.</p>
+                  </div>
+                </div>
+                <datelabel>2025</datelabel>
+              </tile>
+            </a>
+          </div>
+        </tilecontainer> -->
+
+        <tilecontainer class="filterable" id="cf-proj-vidya cf-status-dev cf-work-dsn cf-work-dev cf-work-ux">
+          <div class="showhim">
+            <!-- <a href="http://daniel-meyer.itch.io/10-steps-ahead" target="_blank"> -->
+            <a href="projects/games/digital/10-steps-ahead/play.html">
+              <tile>
+                <div class="tile-header">
+                  <p>▶️</p>
+                  <h2>10 Steps Ahead</h2>
+                </div>
+                <div class="showhim">
+                  <img src="index_files/items/10-steps-ahead/preview-3.gif" width="100%" height="100%">
+                  <div class="showme">
+                    <!-- <br> -->
+                    <p>An Android port-in-progress of an arcade puzzle game I made in 2020.</p>
+                  </div>
+                </div>
+                <datelabel>2026</datelabel>
+              </tile>
+            </a>
+          </div>
+        </tilecontainer>
+
+        <tilecontainer class="filterable" id="cf-proj-vidya cf-status-proto cj-work-dev cf-work-dsn cf-work-ux">
+          <div class="showhim">
+            <a href="/404.html">
+              <tile>
+                <div class="tile-header">
+                  <h2>Hybrid Combat System</h2>
+                </div>
+                <div class="showhim">
+                  <img src="index_files/items/turn-based-combat-system/preview.gif" width="100%" height="100%">
+                  <div class="showme">
+                    <p>A combat system that combines turn-based strategy with real-time input commands.</p>
+                  </div>
+                </div>
+                <datelabel>2026</datelabel>
+              </tile>
+            </a>
+          </div>
+        </tilecontainer>
+
+        <tilecontainer class="filterable" id="cf-proj-mods cf-status-proto cf-work-dsn cf-work-dev">
+          <div class="showhim">
+            <a href="projects/games/digital/mods/pokemon-emerald/overview.html">
+              <tile>
+                <div class="tile-header">
+                  <h2>Emerald ROM Hacking</h2>
+                </div>
+                <div class="showhim">
+                  <img src="index_files/items/emerald-rom-hacking/preview-2.gif" width="100%" height="100%">
+                  <div class="showme">
+                    <p>A ROM hack for personal use that adds new moves, abilities and evolutions to Pokémon Emerald.</p>
+                  </div>
+                </div>
+                <datelabel>2026</datelabel>
+              </tile>
+            </a>
+          </div>
+        </tilecontainer>
+        
+        <!-- <div class="mobile-only">
+          <h2 align="center" style="padding-top: 80px;">↓ 2025 ↓</h2>
+        </div> -->
+
+        <tilecontainer class="filterable" id="cf-proj-vidya cf-status-dev cf-work-dsn cf-work-dev cf-work-writing cf-work-visual cf-work-ux">
+          <div class="showhim">
+            <a href="projects/games/digital/acting-thinking-feeling/play.html">
+              <tile>
+                <div class="tile-header">
+                  <p>▶️</p>
+                  <h2>Acting, Thinking, Feeling</h2>
+                </div>
+                <div class="showhim">
+                  <img src="index_files/items/acting-thinking-feeling/preview-2.gif" width="100%" height="100%">
+                  <div class="showme">
+                    <p>A quirky card "battler" where you try to diffuse an emotional conflict between two friends.</p>
+                    <p>Made in Godot.</p>
+                  </div>
+                </div>
+                <datelabel>2025</datelabel>
+              </tile>
+            </a>
+          </div>
+        </tilecontainer>
+
+        <tilecontainer class="filterable" id="cf-proj-mods cf-status-released cf-status-dev cf-work-dsn cf-work-dev">
+          <div class="showhim">
+            <a href="projects/games/digital/mods/noita/overview.html">
+              <tile>
+                <div class="tile-header">
+                  <h2>Noita Modding</h2>
+                </div>
+                <div class="showhim">
+                  <img src="index_files/items/noita-mods/preview.gif" width="100%" height="100%">
+                  <div class="showme">
+                    <p>An ongoing modding project for Noita, a roguelike game by Nolla Games.</p>
+                  </div>
+                </div>
+                <datelabel>2025</datelabel>
+              </tile>
+            </a>
+          </div>
+        </tilecontainer>
+
+        <tilecontainer class="filterable" id="cf-proj-vidya cf-status-released cf-work-dsn cf-work-writing cf-work-ux cf-work-lead">
+          <div class="showhim">
+            <a href="projects/games/digital/royal-game-of-ur/overview.html">
+              <tile>
+                <div class="tile-header">
+                  <h2>Royal Game of Ur</h2>
+                </div>
+                <div class="showhim">
+                  <img src="index_files/items/royal-game-of-ur/preview.jpg" width="100%" height="100%">
+                  <div class="showme">
+                    <p>Play the world’s oldest board game in an authentic digital environment!<br><br>Made in collaboration with Leiden University.</p>
+                  </div>
+                </div>
+                <datelabel>2024</datelabel>
+              </tile>
+            </a>
+          </div>
+        </tilecontainer>
+
+        <tilecontainer class="filterable" id="cf-proj-board cf-status-proto cf-work-dsn cf-work-writing">
+          <div class="showhim">
+            <!-- <a href="projects/games/analog/health-point"> -->
+            <a href="404.html">
+              <tile>
+                <div class="tile-header">
+                  <h2>Health Point</h2>
+                </div>
+                <div class="showhim">
+                  <img src="index_files/items/health-point/preview.jpg" width="100%" height="100%">
+                  <div class="showme">
+                    <p>A competitive puzzle board game where you cook and sabotage your way to victory: becoming the best chef of a fancy vegetarian restaurant... in a dungeon full of monsters!</p>
+                  </div>
+                </div>
+                <datelabel>2023</datelabel>
+              </tile>
+            </a>
+          </div>
+        </tilecontainer>
+
+        <tilecontainer class="filterable" id="cf-proj-vidya cf-status-released cf-work-dsn cf-work-dev cf-work-writing cf-work-visual cf-work-ux">
+          <div class="showhim">
+            <a href="projects/games/digital/funny-monkey-game/play.html">
+            <!-- <a href="https://daniel-meyer.itch.io/funny-monkey-game"> -->
+              <tile>
+                <div class="tile-header">
+                  <p>▶️</p>
+                  <h2>Funny Monkey Game</h2>
+                </div>
+                <div class="showhim">
+                  <img src="index_files/items/funny-monkey-game/preview.gif" width="100%" height="100%">
+                  <div class="showme">
+                    <p>Gather your friends and use your trusty banana cannons to shoot, slip and tackle your way through 15 challenging waves of banana-fueled mayhem!</p>
+                  </div>
+                </div>
+                <datelabel>2023</datelabel>
+              </tile>
+            </a>
+          </div>
+        </tilecontainer>
+
+        <tilecontainer class="filterable" id="cf-proj-vidya cf-status-prototype cf-work-writing cf-work-ux">
+          <div class="showhim">
+            <!-- <a href="projects/games/analog/health-point"> -->
+            <a href="projects/games/digital/ill-wind/overview.html">
+              <tile>
+                <div class="tile-header">
+                  <h2>Ill Wind</h2>
+                </div>
+                <div class="showhim">
+                  <img src="index_files/items/ill-wind/preview.gif" width="100%" height="100%">
+                  <div class="showme">
+                    <p>Proof-of-concept for a game that aims to concretely represent the worries of various stakeholders within the energy transition.</p>
+                  </div>
+                </div>
+                <datelabel>2023</datelabel>
+              </tile>
+            </a>
+          </div>
+        </tilecontainer>
+
+        <tilecontainer class="filterable" id="cf-proj-tech cf-status-prototype cf-work-dsn">
+          <div class="showhim">
+            <!-- <a href="projects/games/analog/health-point"> -->
+            <a href="projects/tech/celestial-connection/overview.html">
+              <tile>
+                <div class="tile-header">
+                  <h2>Celestial Connection</h2>
+                </div>
+                <div class="showhim">
+                  <img src="index_files/items/celestial-connection/preview.jpg" width="100%" height="100%">
+                  <div class="showme">
+                    <p>An interactive installation that translates bodily movement into sound, using a Kinect and MIDI-communication between FL Studio and Unity.</p>
+                  </div>
+                </div>
+                <datelabel>2023</datelabel>
+              </tile>
+            </a>
+          </div>
+        </tilecontainer>
+
+        <tilecontainer class="filterable" id="cf-proj-tech cf-status-released cf-work-dsn cf-work-dev cf-work-visual cf-work-ux">
+          <div class="showhim">
+            <!-- <a href="projects/tech/hydrobuddy.html"> -->
+            <a href="https://www.instructables.com/-HydroBuddy-/">
+              <tile>
+                <div class="tile-header">
+                  <h2>HydroBuddy</h2>
+                </div>
+                <div class="showhim">
+                  <img src="index_files/items/hydrobuddy/preview.jpg" width="100%" height="100%">
+                  <div class="showme">
+                    <p>An Arduino-driven device that keeps track and gently reminds you of your daily water consumption.</p>
+                  </div>
+                </div>
+                <datelabel>2022</datelabel>
+              </tile>
+            </a>
+          </div>
+        </tilecontainer>
+
+        <tilecontainer class="filterable" id="cf-proj-board cf-status-proto cf-work-dsn cf-work-writing">
+          <div class="showhim">
+            <!-- <a href="projects/games/analog/health-point"> -->
+            <a href="http://stuffbydaniel.com/games/collaborative-board-game">
+              <tile>
+                <div class="tile-header">
+                  <h2>Collaborative Board Game</h2>
+                </div>
+                <div class="showhim">
+                  <img src="index_files/items/collab-board-game/preview.png" width="100%" height="100%">
+                  <div class="showme">
+                    <p>A cooperative board game where players descend further and further into an abandoned temple filled with treasure, using shared resources.</p>
+                  </div>
+                </div>
+                <datelabel>2022</datelabel>
+              </tile>
+            </a>
+          </div>
+        </tilecontainer>
+
+        <tilecontainer class="filterable" id="cf-proj-music">
+          <div class="showhim">
+            <a href="projects/music/prod-zentrum/index.html">
+              <tile>
+                <div class="tile-header">
+                  <h2>Prod. Zentrum</h2>
+                </div>
+                <div class="showhim">
+                  <img src="index_files/items/prod-zentrum/preview.jpg" width="100%" height="100%">
+                  <div class="showme">
+                    <p>Some of the more experimental bass music I made, mostly between 2016 and 2021.</p>
+                  </div>
+                </div>
+                <datelabel>2021</datelabel>
+              </tile>
+            </a>
+          </div>
+        </tilecontainer>
+
+        <tilecontainer class="filterable" id="cf-proj-board cf-status-proto cf-work-dsn cf-work-visual">
+          <div class="showhim">
+            <a href="http://stuffbydaniel.com/more/school-work/projects/project-play/creating-a-board-game-concept-from-literal-trash">
+              <tile>
+                <div class="tile-header">
+                  <h2>Animaatjes</h2>
+                </div>
+                <div class="showhim">
+                  <img src="index_files/items/animaatjes/preview.png" width="100%" height="100%">
+                  <div class="showme">
+                    <p>A competitive board game full of shapeshifting shenanigans!</p>
+                    <p>My first project at HKU.</p>
+                  </div>
+                </div>
+                <datelabel>2020</datelabel>
+              </tile>
+            </a>
+          </div>
+        </tilecontainer>
+
+        <tilecontainer class="filterable" id="cf-proj-vidya cf-status-proto cf-work-dsn cf-work-dev">
+          <div class="showhim">
+            <a href="http://stuffbydaniel.com/games/development/magic-zombies">
+              <tile>
+                <div class="tile-header">
+                  <h2>Magic Zombies</h2>
+                </div>
+                <div class="showhim">
+                  <img src="index_files/items/magic-zombies/preview.png" width="100%" height="100%">
+                  <div class="showme">
+                    <p>Four iterations of the same concept of an arcade twin-stick shooter, which I've used over my early game dev years as a measure of my growth.</p>
+                  </div>
+                </div>
+                <datelabel>2018</datelabel>
+              </tile>
+            </a>
+          </div>
+        </tilecontainer>
+
+        <tilecontainer class="filterable" id="cf-proj-vidya cf-status-proto cf-work-dsn cf-work-dev">
+          <div class="showhim">
+            <a href="http://stuffbydaniel.com/games/development/boris-en-de-sjaak">
+              <tile>
+                <div class="tile-header">
+                  <h2>Boris en de Sjaak</h2>
+                </div>
+                <div class="showhim">
+                  <img src="index_files/items/boris-en-de-sjaak/preview.png" width="100%" height="100%">
+                  <div class="showme">
+                    <p>An endless runner made as a group project in my first (and only) year of Computer Science.</p>
+                  </div>
+                </div>
+                <datelabel>2018</datelabel>
+              </tile>
+            </a>
+          </div>
+        </tilecontainer>
+
+        <!-- <tilecontainer class="filterable" id="cf-proj-vidya cf-status-proto cf-work-dsn cf-work-dev">
+          <div class="showhim">
+            <a href="https://www.youtube.com/watch?v=8bmS-hf046E">
+              <tile>
+                <div class="tile-header">
+                  <h2>Badkamer Bezigheden</h2>
+                </div>
+                <div class="showhim">
+                  <img src="index_files/items/badkamer-bezigheden/preview.gif" width="100%" height="100%">
+                  <div class="showme">
+                    <p>A mobile puzzle game made first in Clickteam Fusion 2.5, then in Android Studio (Java).</p>
+                  </div>
+                </div>
+                <datelabel>2018</datelabel>
+              </tile>
+            </a>
+          </div>
+        </tilecontainer> -->
+
+        <tilecontainer class="filterable" id="cf-proj-music">
+          <div class="showhim">
+            <a href="projects/music/mellow-fellows/index.html">
+              <tile>
+                <div class="tile-header">
+                  <h2>Mellow Fellows</h2>
+                </div>
+                <div class="showhim">
+                  <img src="index_files/items/mellow-fellows/preview.jpeg" width="100%" height="100%">
+                  <div class="showme">
+                    <p>Prototype of an electronic album made with a friend, mostly between 2015 and 2017.</p>
+                  </div>
+                </div>
+                <datelabel>2017</datelabel>
+              </tile>
+            </a>
+          </div>
+        </tilecontainer>
+
+        <tilecontainer class="filterable" id="cf-proj-music">
+          <div class="showhim">
+            <a href="projects/music/prod-beekah/index.html">
+              <tile>
+                <div class="tile-header">
+                  <h2>Prod. Beekah</h2>
+                </div>
+                <div class="showhim">
+                  <img src="index_files/items/prod-beekah/preview.jpeg" width="100%" height="100%">
+                  <div class="showme">
+                    <p>Some of the more club-oriented bass music I made, mostly between 2013 and 2016.</p>
+                  </div>
+                </div>
+                <datelabel>2016</datelabel>
+              </tile>
+            </a>
+          </div>
+        </tilecontainer>
+
+      </post>
+
+    </column>
+    <button class="nav-arrow right">→</button>
+
+    <div id="sidebar-right"></div>
+    <script>
+      fetch('/reusable/sidebar-right.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('sidebar-right').innerHTML = data;
+      });
+    </script>
+
+  </columns>
+
+  <footer>
+    <p>💌 <a href="mailto:daniel@meyer.games">mail</a> | 🎮️ <a href="https://daniel-meyer.itch.io/" target="_blank">itch.io</a> | 🌐 <a href="https://github.com/meyergames/" target="_blank">github</a></p>
+  </footer>
+
+  <script src="/js/on-page-load.js"></script>
+  <!-- <script src="/js/project-tile-filter.js"></script> -->
+</body>
+</html>

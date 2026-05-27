@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>| meyer.games</title>
+  <link rel="icon" type="image/x-icon" href="/index_files/icon.png">
+  <link rel="stylesheet" href="/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="/js/lib/jquery.js"></script>
+  <script type="text/javascript" src="/js/content-filters.js"></script>
+  <script type="text/javascript" src="/js/collapse.js"></script>
+  <script type="text/javascript" src="/js/playsound.js"></script>
+
+</head>
+
+<!-- <div class="loadoverlay">
+  <img src="index_files/load-overlay-16x9.png" width="100%">
+</div> -->
+
+<body>
+  <section>
+
+    <nav></nav>
+
+    <header>
+      <img src="/index_files/icon-064.png">
+      <h1>meyer.games</h1>
+      <br>
+
+      <header-bar>
+        <a href="/index.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            🏠️<br>Home <!--(blog page, basically)-->
+          </button>
+        </a>
+        <a href="/projects.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            🃏<br>Projects
+          </button>
+        </a>
+          <!-- <button class="custom-button">
+            🎲<br>Board Games
+          </button>
+          <button class="custom-button">
+            📟️<br>Tech Projects
+          </button> -->
+        <a href="/friends.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            👬🏼<br>Friends
+          </button>
+        </a>
+        <a href="/me.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            🧑🏼<br>Me
+          </button>
+        </a>
+      </header-bar>
+    </header>
+
+  </section>
+
+  <columns>
+    <button class="nav-arrow left">←</button>
+    <column class="sidebar">
+
+      <post style="text-align: left">
+        <h3>Credits</h3>
+        <ul>
+          <li><a href="https://github.com/rh-hideout/pokeemerald-expansion?tab=readme-ov-file" target="_blank">RH Hideout</a></li>
+          <li>• 💻️ Programming help</li>
+        </ul>
+        <!-- <ul>
+          <li><a href="https://www.reddit.com/user/BlackBoxInc/submitted/" target="_blank">/u/BlackBoxInc</a></li>
+          <li>• 💭 Move ideas</li>
+        </ul> -->
+        <ul>
+          <li><a href="/me.html">Daniel Meyer</a></li>
+          <li>• ⚙️ Design</li>
+          <li>• 💻️ Programming</li>
+          <li>• 🎞️ Sprite Design</li>
+        </ul>
+      </post>
+
+      <post style="text-align: left">
+        <h3>Tools & Resources</h3>
+        <ul>
+          <li><b>Languages</b></li>
+          <li>• 💻️ <a href="https://lua.org/" target="_blank">C / C++</a></li>
+        </ul>
+        <ul>
+          <li><b>Software</b></li>
+          <li>• 🎮️ <a href="https://github.com/Pokabbie/pokeemerald-rogue/" target="_blank">Pokémon Emerald</a></li>
+          <li>• 📄 <a href="https://sublimetext.com/" target="_blank">Sublime Text</a></li>
+          <li>• 🎞️ <a href="https://aseprite.com/" target="_blank">Aseprite</a></li>
+        </ul>
+        <ul>
+          <li><b>Resources</b></li>
+          <li>• 🌐 <a href="https://github.com/Bivurnum/decomps-resources/wiki" target="_blank">ROM Hacking Guide</a></li>
+          <li>• 🌐 <a href="https://github.com/pret/pokeemerald/wiki/Tutorials" target="_blank">Tutorials</a></li>
+        </ul>
+      </post>
+    </column>
+
+    <column>
+
+      <post>
+        <h1 align="center" style="margin-bottom: -16px">Emerald ROM Hacking</h1>
+        <p align="center">Custom Pokémon Moves, Abilities and Evolutions</p>
+        <hr>
+        <br>
+
+        <div class="imageWithTextContent">
+          <p align="center"><img src="/index_files/items/emerald-rom-hacking/pokemon/bayanette.gif" width="100%"></p>
+        </div>
+
+        <p>In January 2026, I ventured into the woods of C, C++ and Assembly code that make up the <a href="https://github.com/Pokabbie/pokeemerald-rogue/" target="_blank">Emerald Rogue 2.0</a> GBA decompilation, to implement a bunch of custom modifications for personal use - moves, abilities and even some Fakemon evolutions.</p>
+        <p>All balancing was done with the <a href="https://www.reddit.com/r/nuzlocke/comments/6so4it/whats_the_point_of_a_nuzlocke/" target="_blank">Nuzlocke</a> playstyle in mind.</p>
+        <p>You can use the tabs below to read more about the things I added.</p>
+        <br>
+        <!-- <p align="center">
+          <button class="tablinks custom-button-active" onclick="showTabContent(event, 'D2D')" style="width: 25%"><img src="/index_files/noita-mod-d2d-016.png" width="64px"><br>D2D Content Pack</button>
+          <button class="tablinks custom-button" onclick="showTabContent(event, 'AFA')" style="width: 25%"><img src="/index_files/noita-mod-afa-016.png" width="64px"><br>Alt Fire Anything</button>
+          <button class="tablinks custom-button" onclick="showTabContent(event, 'Beacons')" style="width: 25%"><img src="/index_files/noita-mod-beacon-016.png" width="64px"><br>Beacons</button>
+        </p> -->
+
+
+        <div class="tabdiv">
+          <p align="center">
+            <button class="tablinks custom-button-active" onclick="showTabContent(event, 'Moves')" style="width: 30%">
+              <img src="/index_files/items/emerald-rom-hacking/icon-tm.png" width="64px">
+              <br>Moves
+            </button>
+            <button class="tablinks custom-button" onclick="showTabContent(event, 'Abilities')" style="width: 30%">
+              <img src="/index_files/items/emerald-rom-hacking/icon-ability-capsule.png" width="64px">
+              <br>Abilities
+            </button>
+            <button class="tablinks custom-button" onclick="showTabContent(event, 'Evolutions')" style="width: 30%">
+              <img src="/index_files/items/emerald-rom-hacking/icon-leaf-stone.png" width="64px">
+              <br>Evolutions
+            </button>
+            <!-- <button class="tablinks custom-button-active" onclick="showTabContent(event, 'Design')">⚙️ Design</button>
+            <button class="tablinks custom-button" onclick="showTabContent(event, 'Coding')">💻️ Coding</button>
+            <button class="tablinks custom-button" onclick="showTabContent(event, 'UX Design')">🎞️ UX Design</button>
+            <button class="tablinks custom-button" onclick="showTabConte*/nt(event, 'What if')">🔮 What if...</button> -->
+          </p>
+
+          <div id="Moves" class="tabcontent" style="display: block">
+            <br>
+            <!-- <p>Some highlights:</p> -->
+            <br>
+
+            <br>
+
+            <div class="imageWithTextContent">
+              <h3>Explosion (reworked)</h3>
+              <br>
+              <img src="/index_files/items/emerald-rom-hacking/moves/explosion.png" width="100%">
+              <div align="left">
+                <p>A buff for a virtually unusable move in regular Nuzlocke. Rather than permanently losing your Pokémon, this change allows you to keep it at a very risky 1 HP.</p>
+                <p>As such, this move is best kept for when you think it'll end the battle in your favour. A true finisher.</p>
+              </div>
+              <br><hr><br>
+            </div>
+
+            <div class="imageWithTextContent">
+              <h3>Enfire / Enfrost / Enthunder</h3>
+              <br>
+              <img src="/index_files/items/emerald-rom-hacking/moves/enfire.png" width="100%">
+              <div align="left">
+                <p>A trio of moves that raises Atk and SpAtk by +1, and causes all Normal-moves to turn into the corresponding type until the user is switched out.</p>
+                <p>Meant as a way to buff the somewhat underwhelming Normal-type Pokémon, by doubling down on their identity as true generalists with powerful coverage options.</p>
+                <p>Speaking of Normal-type buffs...</p>
+              </div>
+              <br><hr><br>
+            </div>
+
+            <div class="imageWithTextContent">
+              <h3>Hyper Beam (reworked)</h3>
+              <br><br>
+              <img src="/index_files/items/emerald-rom-hacking/moves/hyper-beam.png" width="100%">
+              <div align="left">
+                <p>In the first Pokémon games, a bug caused Hyper Beam to not incur its penalty of a skipped turn if it lands a KO. With the lackluster power of Normal-types in the current meta, it's time to turn this bug into a feature.</p>
+                <p>Not landing the KO by any means (e.g. missing, not enough damage, Protect) will still incur the penalty, so using it doesn't come without risk; you're now simply rewarded if you do correctly anticipate the enemy's next move.</p>
+              </div>
+              <br><hr><br>
+            </div>
+
+            <div class="imageWithTextContent">
+              <h3>Fatal Sting</h3>
+              <br><br>
+              <img src="/index_files/items/emerald-rom-hacking/moves/fatal-sting.png" width="100%">
+              <div align="left">
+                <p>Here's a thematically fitting "panic button" for our bee friends. Pretty much a single-target, Bug-typed Explosion.</p>
+              </div>
+              <br><hr><br>
+            </div>
+
+            <div class="imageWithTextContent">
+              <h3>Mach 5</h3>
+              <br><br>
+              <img src="/index_files/items/emerald-rom-hacking/moves/mach-5.png" width="100%">
+              <div align="left">
+                <p>A move custom-tailored to Speed Boost enjoyers like Ninjask and Blaziken. Less powerful than Acrobatics on the first few turns, but if you can keep its user alive until then, you'll be steamrolling with this move - and a usable item slot!</p>
+                <p>For Ninjask specifically, this move's base power scales up from 60 > 80 > 100 > 120 > 140 > ...</p>
+                <p align="right">(Credit for this idea goes to <a href="https://www.reddit.com/user/BlackBoxInc/submitted/" target="_blank">/u/BlackBoxInc</a>)</p>
+              </div>
+              <br><hr><br>
+            </div>
+
+            <div class="imageWithTextContent">
+              <h3>Blade Slash</h3>
+              <br><br>
+              <img src="/index_files/items/emerald-rom-hacking/moves/blade-slash.png" width="100%">
+              <div align="left">
+                <p>One more bug-buff: a proper Steel-type STAB move for Scizor. If only one were to give it Sharpness as a hidden ability...</p>
+                <p>(yes, this is a straight up buff to an already strong Pokémon, but it's my personal ROM hack so who's gonna stop me?)</p>
+              </div>
+              <br><hr><br>
+            </div>
+
+            <div class="imageWithTextContent">
+              <h3>Energize</h3>
+              <br><br>
+              <img src="/index_files/items/emerald-rom-hacking/moves/energize.png" width="100%">
+              <div align="left">
+                <p>Moving on to some support moves: this one lets you increase the Speed of an ally, at the cost of some of their HP.</p>
+                <p>Alternatively, it can be used to take down an enemy in a pinch, though a failed KO will result in their doubled Speed.</p>
+              </div>
+              <br><hr><br>
+            </div>
+
+            <div class="imageWithTextContent">
+              <h3>Bloodletting</h3>
+              <br><br>
+              <img src="/index_files/items/emerald-rom-hacking/moves/bloodletting.png" width="100%">
+              <div align="left">
+                <p>Since I've given mostly high-Attack Pokémon access to this move, this one's quite risky to use, but in the right scenario it may just bring an ally back in the game.</p>
+              </div>
+              <br><hr><br>
+            </div>
+
+            <div class="imageWithTextContent">
+              <h3>Ice Bath</h3>
+              <br><br>
+              <img src="/index_files/items/emerald-rom-hacking/moves/ice-bath.png" width="100%">
+              <div align="left">
+                <p>Last but not least: what if you could give Dragon Dance to an ally? Its effect doubles in cold weather, granting a potential +2 Attack AND Speed to an ally.</p>
+                <p>Grass, Ground, Dragon and Flying types may not appreciate a STAB, snow-boosted ice bath, however...</p>
+              </div>
+              <br><hr><br>
+            </div>
+
+            <div class="imageWithTextContent">
+              <h3>Present (reworked)</h3>
+              <br><br>
+              <img src="/index_files/items/emerald-rom-hacking/moves/present.png" width="100%">
+              <div align="left">
+                <p>While we're here, let's take a look at the other buff I gave our feathered friend.</p>
+                <p>With a 90% chance to heal allies and a 90% to damage enemies, Present is now a more reliable support move. As for the random typing: it just seemed fun and thematically fitting ;)</p>
+              </div>
+              <br><hr><br>
+            </div>
+
+            <div class="imageWithTextContent">
+              <h3>Camo Claw</h3>
+              <br><br>
+              <img src="/index_files/items/emerald-rom-hacking/moves/camo-claw.png" width="100%">
+              <div align="left">
+                <p>Another use for the ???-type: Kecleon now gets to have STAB in whatever type it turns into!</p>
+                <p>If Kecleon gains two types from Reflect Type, this move will also have two types. Like <a href="">Flying Press</a>, but with infinite variety.</p>
+              </div>
+              <br><hr><br>
+            </div>
+
+            <div class="imageWithTextContent">
+              <h3>Protean Lick</h3>
+              <br><br>
+              <img src="/index_files/items/emerald-rom-hacking/moves/protean-lick.png" width="100%">
+              <div align="left">
+                <p>Another signature move for Kecleon, this time more support oriented.</p>
+                <p>(Don't let Shedinja know...)</p>
+              </div>
+              <br><hr><br>
+            </div>
+
+            <div class="imageWithTextContent">
+              <h3>Sunflare</h3>
+              <br><br>
+              <img src="/index_files/items/emerald-rom-hacking/moves/sunflare.png" width="100%">
+              <div align="left">
+                <p>One of the FIVE new moves I've designed for my Cloudform Fakemon. Does what it says on the tin.</p>
+                <p>This is the core of its Sun build, which boasts a mix of offensive and sustain moves.</p>
+              </div>
+              <br><hr><br>
+            </div>
+
+            <div class="imageWithTextContent">
+              <h3>Whiteout</h3>
+              <br><br>
+              <img src="/index_files/items/emerald-rom-hacking/moves/whiteout.png" width="100%">
+              <div align="left">
+                <p>Same, but for snow. Enables Cloudform's Snow build, which is mainly intended for team support.</p>
+              </div>
+              <br><hr><br>
+            </div>
+
+            <div class="imageWithTextContent">
+              <h3>Downpour</h3>
+              <br><br>
+              <img src="/index_files/items/emerald-rom-hacking/moves/downpour.png" width="100%">
+              <div align="left">
+                <p>You guessed it...</p>
+                <p>100% accurate Thunder and Hurricane, with the latter also receiving STAB? Mhmm. Yes, quite.</p>
+              </div>
+              <br><hr><br>
+            </div>
+
+            <div class="imageWithTextContent">
+              <h3>Skybreaker</h3>
+              <br><br>
+              <img src="/index_files/items/emerald-rom-hacking/moves/skybreaker.png" width="100%">
+              <div align="left">
+                <p>You guessed it...</p>
+                <p>Just as powerful as it sounds cool, this one ends active weather with a violent conclusion. Deals a ton of STAB-damage, but also causes Cloudform to revert to its base form.</p>
+              </div>
+              <br><hr><br>
+            </div>
+
+            <div class="imageWithTextContent">
+              <h3>Scatterblast</h3>
+              <br><br>
+              <img src="/index_files/items/emerald-rom-hacking/moves/scatterblast.png" width="100%">
+              <div align="left">
+                <p>Oh yes! This one!</p>
+                <p>A signature move for my homeboy Claydol. Doubling down on its strong hazard-clearing identity, this move will punish the enemy team for cluttering Claydol's side of the field with a multi-target, 120 BP special attack.</p>
+              </div>
+              <br><hr><br>
+            </div>
+
+            <div class="imageWithTextContent">
+              <h3>Sturdy Roots</h3>
+              <br><br>
+              <img src="/index_files/items/emerald-rom-hacking/moves/sturdy-roots.png" width="100%">
+              <div align="left">
+                <p>I may seem a bit biased towards gen 3...</p>
+                <p>This move cements Cradily's identity as the ultimate Giga Draining wall, boosting all of its stats (except Speed) and applying the effects of Ingrain, at the cost of not being able to switch out.</p>
+                <p>Like <a href="">No Retreat</a>, but for one of the coolest tanks in the series.</p>
+                <p align="right">(Credit for this idea goes to <a href="https://www.reddit.com/user/BlackBoxInc/submitted/" target="_blank">/u/BlackBoxInc</a>)</p>
+              </div>
+              <br><hr><br>
+            </div>
+
+            <div class="imageWithTextContent">
+              <h3>Scarecrow</h3>
+              <br><br>
+              <img src="/index_files/items/emerald-rom-hacking/moves/scarecrow.png" width="100%">
+              <div align="left">
+                <p>What if <a href="">Fake Out</a> and <a href="">Roar</a> had a terrifying little baby?</p>
+                <p>Just look at this move and tell me it doesn't SCREAM Cacturne.</p>
+                <p align="right">(Credit for this idea goes to <a href="https://www.reddit.com/user/BlackBoxInc/submitted/" target="_blank">/u/BlackBoxInc</a>)</p>
+              </div>
+              <br><hr><br>
+            </div>
+
+            <div class="imageWithTextContent">
+              <h3>Full Restore</h3>
+              <br><br>
+              <img src="/index_files/items/emerald-rom-hacking/moves/full-restore.png" width="100%">
+              <div align="left">
+                <p>This one goes out to all my fellow masochists who don't embark on any Emerald Rogue run without the Embargo Curse.</p>
+                <p>It's literally identical to using a <a href="">Full Restore</a>, just for those that willingly choose to suffer even more than the base ROM hack asks them to (population: me).</p>
+              </div>
+              <br><hr><br>
+            </div>
+
+            <div class="imageWithTextContent">
+              <h3>Left Hook</h3>
+              <br><br>
+              <img src="/index_files/items/emerald-rom-hacking/moves/left-hook.png" width="100%">
+              <div align="left">
+                <p>This one's quite straightforward: an opening punch to disorient the opponent...</p>
+              </div>
+              <br><hr><br>
+            </div>
+
+            <div class="imageWithTextContent">
+              <h3>Right Hook</h3>
+              <br><br>
+              <img src="/index_files/items/emerald-rom-hacking/moves/right-hook.png" width="100%">
+              <div align="left">
+                <p>...to be followed up with a matching finisher!</p>
+                <p>I wanted classic Fighting types to have some *actual* martial arts combo's, so here's a start.</p>
+              </div>
+              <br><hr><br>
+            </div>
+
+            <p align="center"><b>That's all, folks!</b></p>
+            <br>
+
+          </div>
+
+
+
+
+
+          <div id="Abilities" class="tabcontent">
+            <br>
+            <p>TBA</p>
+            <br>
+          </div>
+
+
+
+
+
+          <div id="Evolutions" class="tabcontent">
+            <br>
+            <p>TBA</p>
+            <br>
+          </div>
+        </div>
+
+
+
+
+
+        <post-half>
+        </post-half>
+        <post-half>
+          <p align="right">
+            <img src="/index_files/icon-064.png">
+            <br>
+            last updated on 14 nov 2025
+            <br>
+            💌 <a href="mailto:daniel@meyer.games?subject=Your Noita mods">reply to this post</a>
+          </p>
+        </post-half>
+      </post>
+
+      <post-half>
+        <p><a href="../../royal-game-of-ur/overview.html">← Previous project</a></p>
+      </post-half>
+      <post-half>
+        <p align="right"><a href="../../acting-thinking-feeling/play.html">Next project →</a></p>
+      </post-half>
+
+    </column>
+    <button class="nav-arrow right">→</button>
+
+    <div id="sidebar-right"></div>
+    <script>
+      fetch('/reusable/sidebar-right.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('sidebar-right').innerHTML = data;
+      });
+    </script>
+
+  </columns>
+
+  <footer>
+    <p>💌 <a href="mailto:daniel@meyer.games">mail</a> | 🎮️ <a href="https://daniel-meyer.itch.io/" target="_blank">itch.io</a> | 🌐 <a href="https://github.com/meyergames/" target="_blank">github</a></p>
+  </footer>
+
+<script>
+function showTabContent(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace("-active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += "-active";
+}
+</script>
+
+  <script src="/js/on-page-load.js"></script>
+</body>
+</html>

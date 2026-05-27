@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>| meyer.games</title>
+  <link rel="icon" type="image/x-icon" href="/index_files/icon.png">
+  <link rel="stylesheet" href="/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="/js/lib/jquery.js"></script>
+  <script type="text/javascript" src="/js/content-filters.js"></script>
+  <script type="text/javascript" src="/js/collapse.js"></script>
+  <script type="text/javascript" src="/js/playsound.js"></script>
+
+</head>
+
+<!-- <div class="loadoverlay">
+  <img src="index_files/load-overlay-16x9.png" width="100%">
+</div> -->
+
+<body>
+  <section>
+
+    <nav></nav>
+
+    <header>
+      <img src="/index_files/icon-064.png">
+      <h1>meyer.games</h1>
+      <br>
+
+      <header-bar>
+        <a href="/index.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            🏠️<br>Home <!--(blog page, basically)-->
+          </button>
+        </a>
+        <a href="/projects.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            🃏<br>Projects
+          </button>
+        </a>
+          <!-- <button class="custom-button">
+            🎲<br>Board Games
+          </button>
+          <button class="custom-button">
+            📟️<br>Tech Projects
+          </button> -->
+        <a href="/friends.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            👬🏼<br>Friends
+          </button>
+        </a>
+        <a href="/me.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            🧑🏼<br>Me
+          </button>
+        </a>
+      </header-bar>
+    </header>
+
+  </section>
+
+  <columns>
+    <button class="nav-arrow left">←</button>
+    <column class="sidebar">
+
+      <post style="text-align: left">
+        <h3>Credits</h3>
+        <ul>
+          <li><a href="https://steamcommunity.com/app/881100/workshop/" target="_blank">Noita Modding Community</a></li>
+          <li>• 💻️ Programming help</li>
+        </ul>
+        <ul>
+          <li><a href="/me.html">Daniel Meyer</a></li>
+          <li>• ⚙️ Design</li>
+          <li>• 💻️ Programming</li>
+          <li>• 🎞️ Sprite Art</li>
+        </ul>
+      </post>
+
+      <post style="text-align: left">
+        <h3>Tools & Resources</h3>
+        <ul>
+          <li>Languages</li>
+          <li>• 💻️ <a href="https://lua.org/" target="_blank">Lua</a></li>
+        </ul>
+        <ul>
+          <li>Software</li>
+          <li>• 🎮️ <a href="https://noitagame.com/" target="_blank">Noita</a></li>
+          <li>• 📄 <a href="https://sublimetext.com/" target="_blank">Sublime Text</a></li>
+          <li>• 🎞️ <a href="https://aseprite.com/" target="_blank">Aseprite</a></li>
+        </ul>
+        <ul>
+          <li>Resources</li>
+          <li>• 🌐 <a href="https://noita.wiki.gg/wiki/Modding" target="_blank">Noita Wiki</a></li>
+          <li>• 🔧 <a href="https://steamcommunity.com/app/881100/workshop/" target="_blank">Others' mods</a></li>
+        </ul>
+      </post>
+    </column>
+
+    <column>
+
+      <post>
+        <h1 align="center" style="margin-bottom: -16px">Noita Modding</h1>
+        <p align="center">Three mods made for Noita</p>
+        <hr>
+        <br>
+
+        <p align="center"><img src="/index_files/items/noita-mods/demo-d2d-2.gif" width="480px">
+        <p>Starting August 2025, I gained a new hyperfixation: learning the ins and outs of Lua's entity-component system, so that I could make my first mod for <a href="https://noitagame.com/" target="_blank">Noita</a> (and for any game ever, for that matter). Now, a little more than three months later, the three mods I've made have collectively been downloaded more than 8500 times!</p>
+        <p>You can use the tabs below to read more about each of them, individually.</p>
+        <!-- <p align="center">
+          <button class="tablinks custom-button-active" onclick="showTabContent(event, 'D2D')" style="width: 25%"><img src="/index_files/noita-mod-d2d-016.png" width="64px"><br>D2D Content Pack</button>
+          <button class="tablinks custom-button" onclick="showTabContent(event, 'AFA')" style="width: 25%"><img src="/index_files/noita-mod-afa-016.png" width="64px"><br>Alt Fire Anything</button>
+          <button class="tablinks custom-button" onclick="showTabContent(event, 'Beacons')" style="width: 25%"><img src="/index_files/noita-mod-beacon-016.png" width="64px"><br>Beacons</button>
+        </p> -->
+
+
+        <div class="tabdiv">
+          <p align="center">
+            <button class="tablinks custom-button-active" onclick="showTabContent(event, 'D2D')" style="width: 30%">
+            <img src="/index_files/noita-mod-d2d-016.png" width="64px">
+              <br>D2D Content Pack
+            </button>
+            <button class="tablinks custom-button" onclick="showTabContent(event, 'AFA')" style="width: 30%">
+              <img src="/index_files/noita-mod-afa-016.png" width="64px">
+              <br>Alt Fire Anything
+            </button>
+            <button class="tablinks custom-button" onclick="showTabContent(event, 'Beacons')" style="width: 30%">
+              <img src="/index_files/noita-mod-beacon-016.png" width="64px">
+              <br>Beacons
+            </button>
+            <!-- <button class="tablinks custom-button-active" onclick="showTabContent(event, 'Design')">⚙️ Design</button>
+            <button class="tablinks custom-button" onclick="showTabContent(event, 'Coding')">💻️ Coding</button>
+            <button class="tablinks custom-button" onclick="showTabContent(event, 'UX Design')">🎞️ UX Design</button>
+            <button class="tablinks custom-button" onclick="showTabConte*/nt(event, 'What if')">🔮 What if...</button> -->
+          </p>
+
+          <div id="D2D" class="tabcontent" style="display: block">
+            <br>
+            <p>A bundle of 70+ spell, perk, item and enemy ideas.</p>
+            <p>Some highlights:</p>
+            <br>
+            <table class="imageWithTextTable">
+              <tbody>
+                <tr style="vertical-align: top">
+                  <td><img src="/index_files/items/noita-mods/demo-d2d-giga-drain.gif" width="360px"></td>
+                  <td>
+                    <b><a href="https://noita.wiki.gg/wiki/Mod:D2D_Content_Pack/Spells/Giga_Drain">Giga Drain</a></b>
+                    <p>A high-risk, high-reward spell that causes enemies to spawn short-lived bubbles to restore your health with (a scarcity in Noita).</p>
+                    <p>In the process of chasing these precious bubbles, the trick is to not lose more health than you would gain from them.</p>
+                  </td>
+                </tr>
+                <td><br></td>
+                <tr style="vertical-align: top">
+                  <td>
+                    <b><a href="https://noita.wiki.gg/wiki/Mod:D2D_Content_Pack/Perks/Time_Trial">Time Trial</a></b>
+                    <p>A <a href="https://noita.wiki.gg/wiki/Perks">perk</a> that challenges you to reach the next checkpoint within 60 seconds, forcing you to speedrun through the next dangerous biome.</p>
+                    <p>Rewards include a powerful mobility spell, namely... ↓</p>
+                  </td>
+                  <td><img src="/index_files/items/noita-mods/demo-d2d-time-trial.gif" width="360px"></td>
+                </tr>
+                <td><br></td>
+                <tr style="vertical-align: top">
+                  <td><img src="/index_files/items/noita-mods/demo-d2d-blink.gif" width="360px"></td>
+                  <td>
+                    <b><a href="https://noita.wiki.gg/wiki/Mod:D2D_Content_Pack/Spells/Blink">Blink</a></b>
+                    <p>A very potent, limited-use mobility spell that instantly warps you to the position of your cursor.</p>
+                    <p>Combined with some of the base game's late-game unlocks, you can remove its usage restrictions for unparallelled short-range manoeuvrability.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+            <hr>
+            <p>For more information about this mod, check out the links below:</p>
+            <p>
+              🔗 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3559987358" target="_blank">Steam Workshop page</a>
+              <br>
+              🔗 <a href="https://noita.wiki.gg/wiki/Mod:D2D_Content_Pack" target="_blank">Noita Wiki section</a>
+              <br>
+              🔗 <a href="https://github.com/meyergames/noita-mod-d2d-content-pack" target="_blank">GitHub repo</a>
+            </p>
+          </div>
+
+          <div id="AFA" class="tabcontent">
+            <br>
+            <p>In Noita, you get 4 slots for customizing your wands to your heart's content, to fill them with infinite combinations of the hundreds of spells the game has to offer. As you progress throughout the game, however, you'll find that your wands inevitably start to serve the same 4 default purposes: damage, digging, travel, healing.</p>
+            <p>This dominant strategy (or "meta", if you will) limits the player's creativity and the space for experimentation - which the game is otherwise all about! Noita's array of enemies alone already justifies carrying 4 different damage wands, but you won't be having a very good time for long if you don't cover those other purposes.</p>
+            <br>
+            <p>The <b>Alt Fire Anything</b> mod aims to solve that, by introducing a spell that effectively splits your wand in two: spells to the left of it are cast by left-clicking (as usual), while spells to the right of it are cast by right-clicking. With 4 copies of the spell, you'll effectively have 8 wand slots!
+            <br>
+            The only caveat is that you'll have to make 2 wands out of the same amount of available spell slots, meaning your spells can't be as complex as with dedicated, separate wand slots - which, actually, serves as a nice emergent balancing measure.</p>
+            <br>
+            <p align="center"><img src="/index_files/items/noita-mods/demo-afa-2.png"></p>
+            <p align="center"><i>An example of Alt Fire Anything giving a wand 2 distinct purposes.</i></p>
+            <p align="center"><img src="/index_files/items/noita-mods/demo-afa-1.gif" width="480px"></p>
+            <br>
+            <hr>
+            <p>For more information about this mod, check out the links below:</p>
+            <p>
+              🔗 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3564206563" target="_blank">Steam Workshop page</a>
+              <br>
+              🔗 <a href="https://noita.wiki.gg/wiki/Mod:Alt_Fire_Anything" target="_blank">Noita Wiki section</a>
+              <br>
+              🔗 <a href="https://github.com/meyergames/alt-fire-anything" target="_blank">GitHub repo</a>
+            </p>
+          </div>
+
+          <div id="Beacons" class="tabcontent">
+            <br>
+            <br>
+            <hr>
+            <p>For more information about this mod, check out the links below:</p>
+            <p>
+              🔗 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3576109074" target="_blank">Steam Workshop page</a>
+              <br>
+              🔗 <a href="https://noita.wiki.gg/wiki/Mod:Summon_Beacon" target="_blank">Noita Wiki section</a>
+            </p>
+          </div>
+        </div>
+
+        <post-half>
+        </post-half>
+        <post-half>
+          <p align="right">
+            <img src="/index_files/icon-064.png">
+            <br>
+            last updated on 14 nov 2025
+            <br>
+            💌 <a href="mailto:daniel@meyer.games?subject=Your Noita mods">reply to this post</a>
+          </p>
+        </post-half>
+      </post>
+
+      <post-half>
+        <p><a href="../../royal-game-of-ur/overview.html">← Previous project</a></p>
+      </post-half>
+      <post-half>
+        <p align="right"><a href="../../acting-thinking-feeling/play.html">Next project →</a></p>
+      </post-half>
+
+    </column>
+    <button class="nav-arrow right">→</button>
+
+    <div id="sidebar-right"></div>
+    <script>
+      fetch('/reusable/sidebar-right.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('sidebar-right').innerHTML = data;
+      });
+    </script>
+    
+  </columns>
+
+  <footer>
+    <p>💌 <a href="mailto:daniel@meyer.games">mail</a> | 🎮️ <a href="https://daniel-meyer.itch.io/" target="_blank">itch.io</a> | 🌐 <a href="https://github.com/meyergames/" target="_blank">github</a></p>
+  </footer>
+
+<script>
+function showTabContent(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace("-active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += "-active";
+}
+</script>
+
+  <script src="/js/on-page-load.js"></script>
+</body>
+</html>

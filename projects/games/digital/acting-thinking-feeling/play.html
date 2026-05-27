@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>| meyer.games</title>
+  <link rel="icon" type="image/x-icon" href="/index_files/icon.png">
+  <link rel="stylesheet" href="/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="/js/lib/jquery.js"></script>
+  <script type="text/javascript" src="/js/content-filters.js"></script>
+  <script type="text/javascript" src="/js/collapse.js"></script>
+  <script type="text/javascript" src="/js/playsound.js"></script>
+
+</head>
+
+<!-- <div class="loadoverlay">
+  <img src="index_files/load-overlay-16x9.png" width="100%">
+</div> -->
+
+<body>
+  <section>
+
+    <nav></nav>
+
+    <header>
+      <img src="/index_files/icon-064.png">
+      <h1>meyer.games</h1>
+      <br>
+
+      <header-bar>
+        <a href="/index.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            🏠️<br>Home <!--(blog page, basically)-->
+          </button>
+        </a>
+        <a href="/projects.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            🃏<br>Projects
+          </button>
+        </a>
+        <a href="/friends.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            👬🏼<br>Friends
+          </button>
+        </a>
+        <a href="/me.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            🧑🏼<br>Me
+          </button>
+        </a>
+      </header-bar>
+    </header>
+
+  </section>
+
+  <columns>
+    <button class="nav-arrow left">←</button>
+    <column class="sidebar">
+
+      <post style="text-align: left">
+        <h3>Credits</h3>
+        <ul>
+          <li><a href="/friends/joppe.html">Joppe Dekkers</a></li>
+          <li>• 🎞️ Character Design</li>
+        </ul>
+        <ul>
+          <li><a href="/me.html">Daniel Meyer</a></li>
+          <li>• ⚙️ Design</li>
+          <li>• 💻️ Programming</li>
+          <li>• 🎛️ UX Design</li>
+          <li>• ✍🏻 Dialog Writing</li>
+          <li>• 🎞️ Interface Visuals</li>
+        </ul>
+      </post>
+
+      <post style="text-align: left">
+        <h3>Tools & Resources</h3>
+        <ul>
+          <li>Software</li>
+          <li>• 🤖 <a href="https://godotengine.org/" target="_blank">Godot</a></li>
+          <li>• 🎞️ <a href="https://aseprite.com/" target="_blank">Aseprite</a></li>
+        </ul>
+      </post>
+    </column>
+
+    <column>
+
+      <post>
+        <h1 align="center" style="margin-bottom: -16px">Acting, Thinking, Feeling</h1>
+        <p align="center">A cooperative card game about resolving emotional conflict</p>
+        <hr>
+        <br>
+
+        <p align="center">
+          <iframe src="game/index.html" width="640" height="360" align="center" frameborder="0"></iframe>
+        </p>
+
+        <br>
+        <p>An experimental game that aims to translate the way we experience strong emotions, the reactions we have to them, and the resulting behavioural patterns into a card game.</p>
+
+        <p>If you'd like to contribute to this game's future development, please tell me about your playthrough in <a href="https://cryptpad.fr/form/#/2/form/view/NzamQU1BODkf-TF2Z23zzToxRySWaevmj4SXrfrDm-c/">this short survey</a>! (currently only in Dutch, sorry about that)</p>
+
+        <br>
+        <hr>
+        <h2 align="center">My Contribution Highlights</h2>
+
+        <div class="tabdiv">
+          <p align="center" class="tablinkholder">
+            <button class="tablinks custom-button-active" onclick="showTabContent(event, 'Design')">⚙️ Design</button>
+            <button class="tablinks custom-button" onclick="showTabContent(event, 'Coding')">💻️ Coding</button>
+            <button class="tablinks custom-button" onclick="showTabContent(event, 'UX Design')">🎛️ UX Design</button>
+            <button class="tablinks custom-button" onclick="showTabContent(event, 'What if')">🔮 What if...</button>
+          </p>
+          <div id="Design" class="tabcontent" style="display: block">
+            <h4>Why cards?</h3>
+            <p>Important design decisions.</p>
+          </div>
+
+          <div id="Coding" class="tabcontent">
+            <p>Some highlights of code.</p> 
+          </div>
+
+          <div id="UX Design" class="tabcontent">
+            <p>Some UX design decisions.</p> 
+          </div>
+
+          <div id="What if" class="tabcontent">
+            <p>...I had an extra 2 years to work on this project, with an infinite budget?</p> 
+          </div>
+        </div>
+
+        <br>
+
+        <post-half>
+        </post-half>
+        <post-half>
+          <p align="right">
+            <img src="/index_files/icon-064.png">
+            <br>
+            last updated on 13 nov 2025
+            <br>
+            💌 <a href="mailto:daniel@meyer.games?subject=Acting, Thinking, Feeling">reply to this post</a>
+          </p>
+        </post-half>
+      </post>
+
+      <post-half>
+        <p><a href="../mods/noita/overview.html">← Previous project</a></p>
+      </post-half>
+      <post-half>
+        <p align="right"><a href="#">Next project →</a></p>
+      </post-half>
+
+    </column>
+    <button class="nav-arrow right">→</button>
+
+    <div id="sidebar-right"></div>
+    <script>
+      fetch('/reusable/sidebar-right.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('sidebar-right').innerHTML = data;
+      });
+    </script>
+    
+  </columns>
+
+  <footer>
+    <p>💌 <a href="mailto:daniel@meyer.games">mail</a> | 🎮️ <a href="https://daniel-meyer.itch.io/" target="_blank">itch.io</a> | 🌐 <a href="https://github.com/meyergames/" target="_blank">github</a></p>
+  </footer>
+
+<script>
+function showTabContent(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace("-active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += "-active";
+}
+</script>
+
+  <script src="/js/on-page-load.js"></script>
+</body>
+</html>

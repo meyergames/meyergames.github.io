@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>| meyer.games</title>
+  <link rel="icon" type="image/x-icon" href="index_files/icon.png">
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="/js/lib/jquery.js"></script>
+  <script type="text/javascript" src="/js/content-filters.js"></script>
+  <script type="text/javascript" src="/js/collapse.js"></script>
+  <script type="text/javascript" src="/js/playsound.js"></script>
+  <script type="text/javascript" src="/js/project-tile-filter.js"></script>
+
+</head>
+
+<!-- <div class="loadoverlay">
+  <img src="index_files/load-overlay-16x9.png" width="100%">
+</div> -->
+
+<body onload="initFilterables()">
+  <section>
+
+    <nav></nav>
+
+    <header>
+      <img src="index_files/icon-064.png">
+      <h1>meyer.games</h1>
+      <br>
+
+      <header-bar>
+        <a href="index.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            🏠️<br>Home
+          </button>
+        </a>
+        <a href="projects.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            🃏<br>Projects
+          </button>
+        </a>
+        <a href="friends.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            👬🏼<br>Friends
+          </button>
+        </a>
+        <a href="me.html" style="text-decoration: none;">
+          <button class="nav-button custom-button-active">
+            🧑🏼<br>Me
+          </button>
+        </a>
+      </header-bar>
+    </header>
+
+  </section>
+
+  <columns>
+    <button class="nav-arrow left">←</button>
+    <div>
+      <column class="sidebar">
+
+        <post style="text-align: left">
+          <h3>Filter By Topic</h3>
+          <hr>
+          <ul class="contentFilterList">
+            <b>Personal</b>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" id="cf-interests" onclick="updateFilter()">
+               🧡 Interests</li>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" id="cf-beliefs" onclick="updateFilter()">
+               🌜️ Beliefs</li>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" id="cf-quirks" onclick="updateFilter()">
+               ❓️ Quirks</li>
+          </ul>
+          <ul class="contentFilterList">
+            <b>Professional</b>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" id="cf-edu" onclick="updateFilter()" checked>
+               🎒 Education</li>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" id="cf-jobs" onclick="updateFilter()" checked>
+               🏭️ Jobs + Gigs</li>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" id="cf-ethics" onclick="updateFilter()" checked>
+               ⚖️ Work Ethic</li>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" id="cf-skills" onclick="updateFilter()" checked>
+               📊 Skills</li>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" id="cf-flaws" onclick="updateFilter()" checked>
+               🪨 Flaws</li>
+          </ul>
+          <ul class="contentFilterList">
+            <b>Technological</b>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" id="cf-langs" onclick="updateFilter()" checked>
+               💻️ Coding Languages
+            </li>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" id="cf-engines" onclick="updateFilter()" checked>
+               🤖 Game Engines</li>
+            <li><input type="checkbox" class="contentFilterChbox" name="contentFilterA" id="cf-software" onclick="updateFilter()" checked>
+               🛠️ Other Software</li>
+          </ul>
+        </post>
+
+      </column>
+    </div>
+
+    <column id="filterablesContainer">
+
+      <post>
+        <div class="postbar">
+          <!-- <h2 class="postbar-icon" onclick="toggleCollapse( this )">🧑🏼</h2>
+          <h2 class="postbar-title" style="margin-top: -3rem" onclick="toggleCollapse( this )">Overview</h2> -->
+          <div class="postbar-ctrls" style="right: -1rem; top: -1rem;">
+            <img src="index_files/ui/collapse-open.png" class="postbar-ctrl" onclick="toggleCollapse( this )">
+            <img src="index_files/ui/close-button.png" class="postbar-ctrl" onclick="hidePost( this )">
+          </div>
+        </div>
+
+        <post-content style="display: block">
+          <p align="center"><img src="index_files/me.jpg" width="256rem" style="border-radius: 128px"></p> 
+
+          <p>Hi! My name is Daniel Meyer.</p>
+          <p>This website is my personal blog and a showcase of my creative work - mostly as a game designer/programmer, sometimes as a UX designer, and occasionally as a social designer.</p>
+          <p>I enjoy creating small, conceptually experimental games, the most recent of which being <a href="projects/games/digital/acting-thinking-feeling/play.html">Acting, Thinking, Feeling</a>: a card game about emotional conflict.
+          <p>The ideal game for me to work on is, first and foremost, fun. At the same time, it fulfills me most to work on games that use the participative nature of games to offer new insights and perspectives, and maybe brighten someone's day - beyond just providing a welcome distraction from reality.</p>
+          <br>
+          <p>So, if you happen to be looking for someone to help make your serious game more fun (or maybe your fun game more serious?), <a href="mailto:daniel@meyer.games?subject=Let's chat!">let's chat</a>!
+          <br></p>
+          <p>
+          In the meantime, feel free to scroll down to learn more about my education, work experience, skills, flaws and all that - or press the button below to check out some of my projects.</p>
+          <br>
+
+          <p align="center">
+            <a href="projects.html" style="text-decoration: none;">
+              <button class="custom-button">
+                🃏<br>Projects
+              </button>
+            </a>
+          </p>
+
+          <br>
+
+          <hr>
+          <post-half>
+          </post-half>
+          <post-half>
+            <p align="right">
+              <img src="index_files/icon-064.png">
+              <br>
+              last updated on 13 nov 2025
+              <br>
+              💌 <a href="mailto:daniel@meyer.games?subject=Your profile">reply to this post</a>
+            </p>
+          </post-half>
+        </post-content>
+      </post>
+
+      <post class="filterable" id="cf-edu">
+
+        <div class="postbar">
+          <h2 class="postbar-icon" onclick="toggleCollapse( this )">🎒</h2>
+          <p class="postbar-cat" onclick="toggleCollapse( this )">Education</p>
+          <h2 class="postbar-title" onclick="toggleCollapse( this )">HKU Games & Interaction</h2>
+          <div class="postbar-ctrls">
+            <img src="index_files/ui/collapse-closed.png" class="postbar-ctrl" onclick="toggleCollapse( this )">
+            <img src="index_files/ui/close-button.png" class="postbar-ctrl" onclick="hidePost( this )">
+          </div>
+        </div>
+
+        <post-content>
+          <hr>
+
+          <p>Some summary about my study at HKU.</p>
+          <post-half>
+          </post-half>
+          <post-half>
+            <p align="right">
+              <img src="index_files/icon-064.png">
+              <br>
+              last updated on 15 nov 2025
+              <br>
+            💌 <a href="mailto:daniel@meyer.games?subject=Your study at HKU">reply to this post</a></p>
+          </post-half>
+        </post-content>
+      </post>
+
+      <post class="filterable" id="cf-quirks">
+
+        <div class="postbar">
+          <h2 class="postbar-icon" onclick="toggleCollapse( this )">📱</h2>
+          <p class="postbar-cat" onclick="toggleCollapse( this )">Quirks</p>
+          <h2 class="postbar-title" onclick="toggleCollapse( this )">My smartphone habits</h2>
+          <div class="postbar-ctrls">
+            <img src="index_files/ui/collapse-closed.png" class="postbar-ctrl" onclick="toggleCollapse( this )">
+            <img src="index_files/ui/close-button.png" class="postbar-ctrl" onclick="hidePost( this )">
+          </div>
+        </div>
+
+        <post-content>
+          <hr>
+
+          <p>In the summer of 2023, I dropped my last proper smartphone into a hot tub - my beloved BlackBerry KEY2. Since then, I've only had old smartphones that I use as glorified MP3 players, along with an old Nokia to call/sms with.</p>
+          <p>I leave chatting (i.e. Signal/WhatsApp) and answering emails for when I'm behind my laptop. Whenever I'm not, I very much appreciate being unreachable for everything except emergencies and spontaneous plans with friends - hence the Nokia.</p>
+          <post-half>
+          </post-half>
+          <post-half>
+            <p align="right">
+              <img src="index_files/icon-064.png">
+              <br>
+              last updated on 13 nov 2025
+              <br>
+            💌 <a href="mailto:daniel@meyer.games?subject=Your smartphone habits">reply to this post</a></p>
+          </post-half>
+        </post-content>
+      </post>
+
+      <post class="filterable" id="cf-langs">
+
+        <div class="postbar">
+          <h2 class="postbar-icon" onclick="toggleCollapse( this )">💻️</h2>
+          <p class="postbar-cat" onclick="toggleCollapse( this )">Coding Languages</p>
+          <h2 class="postbar-title" onclick="toggleCollapse( this )">Lua</h2>
+          <div class="postbar-ctrls">
+            <img src="index_files/ui/collapse-closed.png" class="postbar-ctrl" onclick="toggleCollapse( this )">
+            <img src="index_files/ui/close-button.png" class="postbar-ctrl" onclick="hidePost( this )">
+          </div>
+        </div>
+
+        <post-content>
+          <hr>
+
+          <p>In the second half of 2025, I familiarized myself with Lua's entity-component system by making <a href="projects/games/digital/mods/noita/overview.html">three mods for Noita</a>. Most of the Lua code I wrote can be found in <a href="https://github.com/meyergames/noita-mod-d2d-content-pack" target="_blank">this Github repo</a>.</p>
+          <post-half>
+          </post-half>
+          <post-half>
+            <p align="right">
+              <img src="index_files/icon-064.png">
+              <br>
+              last updated on 13 nov 2025
+              <br>
+            💌 <a href="mailto:daniel@meyer.games?subject=Your experience with Lua">reply to this post</a></p>
+          </post-half>
+      </post>
+
+      <post class="filterable" id="cf-langs">
+
+        <div class="postbar">
+          <h2 class="postbar-icon" onclick="toggleCollapse( this )">💻️</h2>
+          <p class="postbar-cat" onclick="toggleCollapse( this )">Coding Languages</p>
+          <h2 class="postbar-title" onclick="toggleCollapse( this )">GDScript</h2>
+          <div class="postbar-ctrls">
+            <img src="index_files/ui/collapse-closed.png" class="postbar-ctrl" onclick="toggleCollapse( this )">
+            <img src="index_files/ui/close-button.png" class="postbar-ctrl" onclick="hidePost( this )">
+          </div>
+        </div>
+
+        <post-content>
+          <hr>
+
+          <p>GDScript is the scripting language used in Godot. Like Java and C#, it is an object-oriented language, so it wasn't very difficult to wrap my head around GDScript's syntax and its underlying concepts.</p>
+          <p>You can see some of the code I wrote in GDScript in <a href="https://github.com/zemiguel20/RoyalGameOfUr/activity?actor=meyergames" target="_blank">this Github repo</a>.</p>
+          <post-half>
+          </post-half>
+          <post-half>
+            <p align="right">
+              <img src="index_files/icon-064.png">
+              <br>
+              last updated on 13 nov 2025
+              <br>
+            💌 <a href="mailto:daniel@meyer.games?subject=Your experience with Godot">reply to this post</a></p>
+          </post-half>
+        </post-content>
+      </post>
+
+      <post class="filterable" id="cf-engines">
+
+        <div class="postbar">
+          <h2 class="postbar-icon" onclick="toggleCollapse( this )">🤖</h2>
+          <p class="postbar-cat" onclick="toggleCollapse( this )">Game Engines</p>
+          <h2 class="postbar-title" onclick="toggleCollapse( this )">Godot</h2>
+          <div class="postbar-ctrls">
+            <img src="index_files/ui/collapse-closed.png" class="postbar-ctrl" onclick="toggleCollapse( this )">
+            <img src="index_files/ui/close-button.png" class="postbar-ctrl" onclick="hidePost( this )">
+          </div>
+        </div>
+
+        <post-content>
+          <hr>
+          <p align="center"><a href="https://godotengine.org/"><img src="index_files/godot-logo.png" height="96px"></a></p>
+
+          <p>I've been using Godot since early 2024, starting with the <a href="projects/games/digital/royal-game-of-ur.html">Royal Game of Ur</a> group project. Since then, I've used it to create various prototypes as a "solo dev", including <a href="https://daniel-meyer.itch.io/not-so-minigolf">one game jam entry</a> and <a href="projects/games/digital/acting-thinking-feeling.html">Acting, Thinking, Feeling</a>.</p>
+          <p>With its open-source nature, optimized dev/design workflow and practically non-existent loading times, Godot is my personal engine of choice - at least for anything that's not a large 3D project.</p>
+          <post-half>
+          </post-half>
+          <post-half>
+            <p align="right">
+              <img src="index_files/icon-064.png">
+              <br>
+              last updated on 13 nov 2025
+              <br>
+            💌 <a href="mailto:daniel@meyer.games?subject=Your experience with Godot">reply to this post</a></p>
+          </post-half>
+        </post-content>
+      </post>
+
+      <post class="filterable" id="cf-engines">
+
+        <div class="postbar">
+          <h2 class="postbar-icon" onclick="toggleCollapse( this )">🤖</h2>
+          <p class="postbar-cat" onclick="toggleCollapse( this )">Game Engines</p>
+          <h2 class="postbar-title" onclick="toggleCollapse( this )">Unity</h2>
+          <div class="postbar-ctrls">
+            <img src="index_files/ui/collapse-closed.png" class="postbar-ctrl" onclick="toggleCollapse( this )">
+            <img src="index_files/ui/close-button.png" class="postbar-ctrl" onclick="hidePost( this )">
+          </div>
+        </div>
+
+        <post-content>
+          <hr>
+          <p align="center"><a href="https://unity.com/"><img src="index_files/unity-logo.png" height="64px"></a></p>
+
+          <p>Since learning how to use Unity back in 2019, I've used it for the majority of my (group) projects during my study at HKU.</p>
+          <p>
+            Notable projects I've worked on using Unity:
+            <ul>
+          <li><a href="projects/games/digital/funny-monkey-game.html">Funny Monkey Game</a> (2023)</li>
+          <li><a href="projects/tech/celestial-connection.html">Celestial Connection</a> (2022)</li>
+          <li><a href="projects/games/digital/10-steps-ahead.html">10 Steps Ahead</a> (2020)</li>
+        </ul>
+      </p>
+
+          <p>While no longer my personal engine of choice, I still work comfortably with Unity.</p>
+          <post-half>
+          </post-half>
+          <post-half>
+            <p align="right">
+              <img src="index_files/icon-064.png">
+              <br>
+              last updated on 13 nov 2025
+              <br>
+            💌 <a href="mailto:daniel@meyer.games?subject=Your experience with Unity">reply to this post</a></p>
+          </post-half>
+        </post-content>
+      </post>
+
+      <post class="filterable" id="cf-software">
+
+        <div class="postbar">
+          <h2 class="postbar-icon" onclick="toggleCollapse( this )">🛠️</h2>
+          <p class="postbar-cat" onclick="toggleCollapse( this )">Other Software</p>
+          <h2 class="postbar-title" onclick="toggleCollapse( this )">Git</h2>
+          <div class="postbar-ctrls">
+            <img src="index_files/ui/collapse-closed.png" class="postbar-ctrl" onclick="toggleCollapse( this )">
+            <img src="index_files/ui/close-button.png" class="postbar-ctrl" onclick="hidePost( this )">
+          </div>
+        </div>
+
+        <post-content>
+          <hr>
+
+          <p>Blablabla</p>
+
+          <post-half>
+          </post-half>
+          <post-half>
+            <p align="right">
+              <img src="index_files/icon-064.png">
+              <br>
+              last updated on 19 nov 2025
+              <br>
+            💌 <a href="mailto:daniel@meyer.games?subject=Your experience with git">reply to this post</a></p>
+          </post-half>
+        </post-content>
+      </post> 
+
+      <post class="filterable" id="cf-beliefs">
+
+        <div class="postbar">
+          <h2 class="postbar-icon" onclick="toggleCollapse( this )">🌜️</h2>
+          <p class="postbar-cat" onclick="toggleCollapse( this )">Beliefs</p>
+          <h2 class="postbar-title" onclick="toggleCollapse( this )">The Future is Open Source</h2>
+          <div class="postbar-ctrls">
+            <img src="index_files/ui/collapse-closed.png" class="postbar-ctrl" onclick="toggleCollapse( this )">
+            <img src="index_files/ui/close-button.png" class="postbar-ctrl" onclick="hidePost( this )">
+          </div>
+        </div>
+
+        <post-content>
+          <hr>
+
+          <p>Data sovereignty is very important to me, both on a personal and global level. As such,  I aim to exclusively use, produce and support software following the <a href="https://en.wikipedia.org/wiki/Free_and_open-source_software" target="_blank">FOSS philosophy</a>, only stepping out to proprietary options when absolutely necessary.</p>
+          <p>I'd like to one day make a meaningfully open source game. If that happens to be something you'd also like to explore: <a href="mailto:daniel@meyer.games?subject=Open source games">let's get in touch</a>!</p>
+
+          <post-half>
+          </post-half>
+          <post-half>
+            <p align="right">
+              <img src="index_files/icon-064.png">
+              <br>
+              last updated on 13 nov 2025
+              <br>
+            💌 <a href="mailto:daniel@meyer.games?subject=Your preference for open source">reply to this post</a></p>
+          </post-half>
+        </post-content>
+      </post>
+
+    </column>
+    <button class="nav-arrow right">→</button>
+
+    <div id="sidebar-right"></div>
+    <script>
+      fetch('/reusable/sidebar-right.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('sidebar-right').innerHTML = data;
+      });
+    </script>
+
+  </columns>
+
+  <footer>
+    <p>💌 <a href="mailto:daniel@meyer.games">mail</a> | 🎮️ <a href="https://daniel-meyer.itch.io/" target="_blank">itch.io</a> | 🌐 <a href="https://github.com/meyergames/" target="_blank">github</a></p>
+  </footer>
+
+  <script src="/js/on-page-load.js"></script>
+</body>
+</html>

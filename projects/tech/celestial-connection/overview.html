@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>| meyer.games</title>
+  <link rel="icon" type="image/x-icon" href="/index_files/icon.png">
+  <link rel="stylesheet" href="/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="/js/lib/jquery.js"></script>
+  <script type="text/javascript" src="/js/content-filters.js"></script>
+  <script type="text/javascript" src="/js/collapse.js"></script>
+  <script type="text/javascript" src="/js/playsound.js"></script>
+
+</head>
+
+<!-- <div class="loadoverlay">
+  <img src="index_files/load-overlay-16x9.png" width="100%">
+</div> -->
+
+<body>
+  <section>
+
+    <nav></nav>
+
+    <header>
+      <img src="/index_files/icon-064.png">
+      <h1>meyer.games</h1>
+      <br>
+
+      <header-bar>
+        <a href="/index.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            🏠️<br>Home <!--(blog page, basically)-->
+          </button>
+        </a>
+        <a href="/projects.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            🃏<br>Projects
+          </button>
+        </a>
+          <!-- <button class="custom-button">
+            🎲<br>Board Games
+          </button>
+          <button class="custom-button">
+            📟️<br>Tech Projects
+          </button> -->
+        <a href="/friends.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            👬🏼<br>Friends
+          </button>
+        </a>
+        <a href="/me.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            🧑🏼<br>Me
+          </button>
+        </a>
+      </header-bar>
+    </header>
+
+  </section>
+
+  <columns>
+    <button class="nav-arrow left">←</button>
+    <column class="sidebar">
+
+      <post style="text-align: left">
+        <h3>Credits</h3>
+        <ul>
+          <li><a href="/friends.html">Koen van der Waal</a></li>
+          <li>• 💻️ Programming</li>
+        </ul>
+        <ul>
+          <li><a href="/friends.html">Denis Dvorkovyy</a></li>
+          <li>• 💻️ Programming</li>
+          <li>• 🎨 Tech Art</li>
+        </ul>
+        <ul>
+          <li><a href="/friends.html">Other people</a></li>
+          <li>• 💭 General Design</li>
+          <li>• 🎨 3D Art</li>
+          <li>• 🎨 Physical Props</li>
+        </ul>
+        <ul>
+          <li><a href="/me.html">Daniel Meyer</a></li>
+          <li>• 💭 General Design</li>
+          <li>• 💻️ Programming</li>
+        </ul>
+      </post>
+
+      <post style="text-align: left">
+        <h3>Tools & Resources</h3>
+        <ul>
+          <li>Software</li>
+          <li>• 🤖 <a href="https://unity.com/" target="_blank">Unity</a></li>
+          <li>• 🎚️ <a href="https://www.image-line.com/" target="_blank">FL Studio</a></li>
+        </ul>
+      </post>
+    </column>
+
+    <column>
+
+      <post>
+        <h1 align="center" style="margin-bottom: -16px">Celestial Connection</h1>
+        <p align="center">Translating bodily movement into sound</p>
+        <hr>
+        <br>
+
+        <p>Using Unity, we translated data from a Kinect into MIDI messages. These messages were then received by FL Studio, tweaking many different variables to change the tone, texture and general presence of an ambient soundscape.</p>
+
+        <br>
+
+        <video width="320" height="240" controls>
+          <source src="./data/receiving-midi-input-in-daw.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>Receiving MIDI messages and using it to control DAW parameters</p>
+
+        <br>
+
+        <video width="320" height="240" controls>
+          <source src="./data/demo-movement-to-sound.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>Sound directly responding to movement</p>
+
+        <br>
+
+        <video width="320" height="240" controls>
+          <source src="./data/demo-final-installation.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>A demonstration of the final installation</p>
+        <p>Songs used: “Limerence” by Yves Tumor, and “Hare Jaya Jaya Rama II” by Laraaji</p>
+
+        <br>
+
+        <post-half>
+        </post-half>
+        <post-half>
+          <p align="right">
+            <img src="/index_files/icon-064.png">
+            <br>
+            last updated on 19 may 2026
+            <br>
+            💌 <a href="mailto:daniel@meyer.games?subject=Your Noita mods">reply to this post</a>
+          </p>
+        </post-half>
+      </post>
+
+      <post-half>
+        <p><a href="projects.html">← Previous project</a></p>
+      </post-half>
+      <post-half>
+        <p align="right"><a href="projects/games/digital/ill-wind/overview.html">Next project →</a></p>
+      </post-half>
+
+    </column>
+    <button class="nav-arrow right">→</button>
+
+    <div id="sidebar-right"></div>
+    <script>
+      fetch('/public/reusable/sidebar-right.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('sidebar-right').innerHTML = data;
+      });
+    </script>
+
+  </columns>
+
+  <footer>
+    <p>💌 <a href="mailto:daniel@meyer.games">mail</a> | 🎮️ <a href="https://daniel-meyer.itch.io/" target="_blank">itch.io</a> | 🌐 <a href="https://github.com/meyergames/" target="_blank">github</a></p>
+  </footer>
+
+<script>
+function showTabContent(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace("-active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += "-active";
+}
+</script>
+
+  <script src="/js/on-page-load.js"></script>
+</body>
+</html>

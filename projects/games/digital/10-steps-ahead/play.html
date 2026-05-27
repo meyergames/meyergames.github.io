@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>| meyer.games</title>
+  <link rel="icon" type="image/x-icon" href="/index_files/icon.png">
+  <link rel="stylesheet" href="/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="/js/lib/jquery.js"></script>
+  <script type="text/javascript" src="/js/content-filters.js"></script>
+  <script type="text/javascript" src="/js/collapse.js"></script>
+  <script type="text/javascript" src="/js/playsound.js"></script>
+  <script type="text/javascript" src="/js/lib/papaparse/papaparse.min.js"></script>
+
+</head>
+
+<!-- <div class="loadoverlay">
+  <img src="index_files/load-overlay-16x9.png" width="100%">
+</div> -->
+
+<body onload="initHighscores( '5fda77aceb36c70af8369f2f' )">
+  <section>
+
+    <nav></nav>
+
+    <header>
+      <img src="/index_files/icon-064.png">
+      <h1>meyer.games</h1>
+      <br>
+
+      <header-bar>
+        <a href="/index.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            🏠️<br>Home <!--(blog page, basically)-->
+          </button>
+        </a>
+        <a href="/projects.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            🃏<br>Projects
+          </button>
+        </a>
+        <a href="/friends.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            👬🏼<br>Friends
+          </button>
+        </a>
+        <a href="/me.html" style="text-decoration: none;">
+          <button class="nav-button custom-button">
+            🧑🏼<br>Me
+          </button>
+        </a>
+      </header-bar>
+    </header>
+
+  </section>
+
+  <columns>
+    <button class="nav-arrow left">←</button>
+    <column class="sidebar">
+
+      <post style="text-align: left">
+        <h3>Credits</h3>
+        <ul>
+          <li><a href="/me.html">Daniel Meyer</a></li>
+          <li>• ⚙️ Design</li>
+          <li>• 💻️ Programming</li>
+          <li>• 🎛️ UX Design</li>
+          <br>
+          <li><a href="https://heltonyan.itch.io/pixelcombat" target="_blank">Helton Yan</a></li>
+          <li>• 🎶 Some of the SFX</li>
+        </ul>
+      </post>
+
+      <post style="text-align: left">
+        <h3>Tools & Resources</h3>
+        <ul>
+          <li>Software</li>
+          <li>• 🤖 <a href="https://unity.com/" target="_blank">Godot</a></li>
+          <!-- <li>• 🤖 <a href="https://unity.com/" target="_blank">Unity</a></li> -->
+          <li>• 🏆️ <a href="https://dreamlo.com/" target="_blank">Dreamlo</a></li>
+        </ul>
+      </post>
+
+      <post>
+        <div align="center">
+          <h2>👑</h2>
+          <h2>Highscores</h2>
+          <div id="highscorePost"></div>
+        </div>
+      </post>
+
+    </column>
+
+    <column>
+
+      <post>
+        <h1 align="center" style="margin-bottom: -16px">10 Steps Ahead</h1>
+        <p align="center">An arcade puzzle game with global highscores</p>
+        <hr>
+        <br>
+
+        <!-- <div class="desktop-only"> -->
+          <p align="center">
+            <!-- <img src="https://img.itch.zone/aW1nLzE2MDU2NzgxLmdpZg=="/original/O4DU8r.gif" width="640" style="border: 8px solid var(--colour-darken-25)"> -->
+            <!-- <iframe width="650" height="366" src="https://www.youtube-nocookie.com/embed/flRl7wq_Fbg" title="Funny Monkey Game: Promo Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen ></iframe> -->
+            <!-- <iframe src="game/index.html" width="640" height="360" align="center" frameborder="0"></iframe> -->
+            <iframe src="game/10 Steps Ahead.html" width="100%" height="640" align="center" frameborder="1"></iframe>
+          </p>
+        <!-- </div> -->
+        <!-- <div align="center" class="mobile-only">
+          <img src="/index_files/items/10-steps-ahead/preview.gif" width="50%"></img>
+          <p align="center"><b>Open this page on a computer to play!</b></p>
+        </div> -->
+
+        <p align="center">(the APK works better; download below)</p>
+
+        <br>
+        <p>An Android-port-in-progress of an arcade puzzle game I made in 2020.<br><br>Rotate the ring of barriers to protect Mr. Green Dude from the attacking totem in the middle.<br>If it manages to damage him even once, you are af!</p>
+        <br>
+
+        <hr>
+
+        <br>
+        <div align="center">
+          <h2>Controls</h2>
+          <br>
+          <b>ROTATE:</b><br>
+          ←👆🏼→ or •👆🏼•<br>Swipe or tap left/right<br>
+          ←⌨️→<br>Left / Right arrows<br><br><br><br>
+          <b>USE POWERUP:</b><br>
+          👆🏼👆🏼<br>Double Tap in the middle<br>
+          ⌨️↲<br>Space / Enter<br><br><br><br>
+          <b>SWITCH POWERUPS:</b><br>
+          👆🏼↑<br>Swipe up<br>
+          ⌨️↑<br>Up arrow<br><br><br><br>
+          <b>AERIAL VIEW:</b><br>
+          👆🏼↓<br>Swipe and hold down<br>
+          ⌨️↓<br>Down arrow (hold)<br><br>
+        </div>
+        <br>
+
+        <hr>
+
+        <br>
+        <p align="center">
+          <a href="/projects/games/digital/10-steps-ahead/downloads/10 Steps Ahead.apk" style="text-decoration: none;">
+            <button class="custom-button">
+              📥️<br>Download APK
+            </button>
+          </a>
+        </p>
+        <br>
+
+        <!-- <br>
+        <p align="center"><b>← Highscores</b></p>
+        <br> -->
+
+        <hr>
+        <br>
+        <h2 align="center">My Contribution Highlights</h2>
+
+        <div class="tabdiv">
+          <p align="center" class="tablinkholder">
+            <button class="tablinks custom-button-active" onclick="showTabContent(event, 'Design')">⚙️ Design</button>
+            <button class="tablinks custom-button" onclick="showTabContent(event, 'Coding')">💻️ Programming</button>
+            <button class="tablinks custom-button" onclick="showTabContent(event, 'UX Design')">🎛️ UX Design</button>
+            <button class="tablinks custom-button" onclick="showTabContent(event, 'What if')">🔮 What if...</button>
+          </p>
+          <div id="Design" class="tabcontent" style="display: block">
+            <h4>Design</h3>
+            <p>TBA</p>
+            <p>You can find the 2020 version of this game on <a href="https://daniel-meyer.itch.io/10-steps-ahead" target="_blank">my itch page</a>.</p>
+            <br>
+          </div>
+
+          <div id="Coding" class="tabcontent">
+            <h4>Programming</h3>
+            <p>TBA</p>
+          </div>
+
+          <div id="UX Design" class="tabcontent">
+            <h4>UX Design</h3>
+            <p>TBA</p>
+          </div>
+
+          <div id="What if" class="tabcontent">
+            <p>...I had an extra 2 years to work on this project, with an infinite budget?</p> 
+          </div>
+        </div>
+
+        <br>
+
+        <post-half>
+        </post-half>
+        <post-half>
+          <p align="right">
+            <img src="/index_files/icon-064.png">
+            <br>
+            last updated on 20 may 2026
+            <br>
+            💌 <a href="mailto:daniel@meyer.games?subject=Acting, Thinking, Feeling">reply to this post</a>
+          </p>
+        </post-half>
+      </post>
+
+      <post-half>
+        <p><a href="../mods/noita/overview.html">← Previous project</a></p>
+      </post-half>
+      <post-half>
+        <p align="right"><a href="#">Next project →</a></p>
+      </post-half>
+
+    </column>
+    <button class="nav-arrow right">→</button>
+
+    <div id="sidebar-right"></div>
+    <script>
+      fetch('/reusable/sidebar-right.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('sidebar-right').innerHTML = data;
+      });
+    </script>
+    
+  </columns>
+
+  <footer>
+    <p>💌 <a href="mailto:daniel@meyer.games">mail</a> | 🎮️ <a href="https://daniel-meyer.itch.io/" target="_blank">itch.io</a> | 🌐 <a href="https://github.com/meyergames/" target="_blank">github</a></p>
+  </footer>
+
+<script>
+function showTabContent(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace("-active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += "-active";
+}
+</script>
+
+  <script src="/js/on-page-load.js"></script>
+  <script src="/js/generate-highscores-table.js"></script>
+</body>
+</html>
