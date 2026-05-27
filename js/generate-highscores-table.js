@@ -9,7 +9,7 @@ function initHighscores( privateCode ) {
         })
         .then(data => {
             // console.log(data)
-            // var entries = Papa.parse( data )
+            var entries = Papa.parse( data )
             createTable( entries )
         })
         .catch(error => {
