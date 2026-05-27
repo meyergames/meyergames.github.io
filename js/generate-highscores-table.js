@@ -21,13 +21,19 @@ function initHighscores( privateCode ) {
 function createTable( entries ) {
     var br = document.createElement("br")
     var table = document.createElement("TABLE")  //makes a table element for the page
-        
+
+    console.debug( "length: " + entries.data.length )
     for(var i = 0; i < Math.min( entries.data.length, 20 ); i++) {
         var row = table.insertRow(i)
         console.debug( entries.data[i] )
         row.insertCell(0).innerHTML = (i+1) + "."
         row.insertCell(1).innerHTML = entries.data[i][0].replaceAll('+',' ')
-        row.insertCell(2).innerHTML = entries.data[i][1]
+        if entries.data[i][1] != "" {
+            row.insertCell(2).innerHTML = entries.data[i][1]
+        }
+        else {
+            row.insertCell(2).innerHTML = " "
+        }
 
         // if ( i < 3 ) {
         if ( i == 0 ) {
