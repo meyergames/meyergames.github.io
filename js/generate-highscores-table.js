@@ -1,5 +1,5 @@
 
-function initHighscores( privateCode, amt_of_entries ) {
+function initHighscores( privateCode ) {
     fetch('https://www.dreamlo.com/lb/' + privateCode + '/quote')
         .then(response => {
             if (!response.ok) {
@@ -10,7 +10,7 @@ function initHighscores( privateCode, amt_of_entries ) {
         .then(data => {
             // console.log(data)
             var entries = Papa.parse( data )
-            createTable( entries, amt_of_entries )
+            createTable( entries )
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error)
@@ -18,30 +18,35 @@ function initHighscores( privateCode, amt_of_entries ) {
         })
 }
 
-function createTable( entries, amt_of_entries ) {
+function createTable( entries ) {
     var br = document.createElement("br")
     var table = document.createElement("TABLE")  //makes a table element for the page
         
     console.debug( "length: " + entries.data.length )
-    // Math.min( entries.data.length - 1, 20 )
-    for(var i = 0; i < amt_of_entries; i++) {
-        console.debug( "created row for " + i )
+    for(var i = 0; i < Math.min( entries.data.length - 1, 20 ); i++) {
         var row = table.insertRow(i)
+        console.debug( entries.data[i] )
         row.insertCell(0).innerHTML = (i+1) + "."
+        row.insertCell(1).innerHTML = entries.data[i][0].replaceAll('+',' ')
+        row.insertCell(2).innerHTML = entries.data[i][1]
 
-            // if ( i < 3 ) {
-        if entries.data.length >= i {
-            row.insertCell(1).innerHTML = entries.data[i][0].replaceAll('+',' ')
-            row.insertCell(2).innerHTML = entries.data[i][1]
-            if ( i == 0 ) {
-                row.setAttribute( "style", "background-color: #fffd70ff")
-            } else if ( i == 1 ) {
-                row.setAttribute( "style", "background-color: #ffffffff")
-            } else if ( i == 2 ) {
-                row.setAttribute( "style", "background-color: #ffaf77ff")
-            }
+        // if ( i < 3 ) {
+        if ( i == 0 ) {
+            row.setAttribute( "style", "background-color: #fffd70ff")
+        } else if ( i == 1 ) {
+            row.setAttribute( "style", "background-color: #ffffffff")
+        } else if ( i == 2 ) {
+            row.setAttribute( "style", "background-color: #ffaf77ff")
         }
+            // row.setAttribute( "class", "highscoreTopRows" )
+        // }
     }
+
+    // var header = table.createTHead()
+    // var headerRow = header.insertRow(0)
+    // for(var i = 0; i < headers.length; i++) {
+        // headerRow.insertCell(i).innerHTML = headers[i]
+    // }
 
     document.getElementById("highscorePost").append(table)
     document.getElementById("highscorePost").append(br)
@@ -49,6 +54,7 @@ function createTable( entries, amt_of_entries ) {
 }
 
 function showNetworkErrorOnPage() {
+
     var br = document.createElement("br")
     var p = document.createElement("p")
     p.innerHTML = "Could not fetch highscores :("
