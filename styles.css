@@ -13,6 +13,7 @@
 @font-face {
     font-family: 'FontBread';
     src: url('index_files/fonts/pixel operator/PixelOperator.ttf');
+    /*src: url('index_files/fonts/pixelplay/pixelplay.ttf');*/
 }
 
 :root {
