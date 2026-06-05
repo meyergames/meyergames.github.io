@@ -113,78 +113,106 @@
           <p align="center"><b>Open this page on a computer to play!</b></p>
         </div> -->
 
-        <p align="center">(the APK works better; download below)</p>
 
-        <br>
-        <p>An Android-port-in-progress of an arcade puzzle game I made in 2020.The aim is to survive for as many steps as possible. If even one attack from the totem hits you through the ring of barriers, you are af!</p>
-        <p>Every 24 hours, the game gets a new daily seed and daily leaderboard. If you play the game for a bit and refresh the page, you'll see your username pop up on the sidebar to the left!</p>
-        <br><br>
-        <p>Information about attacks and powerups can be found by pressing the in-game ℹ️ button.</p>
-        <br>
 
-        <hr>
 
-        <br>
-        <div align="center">
-          <h2>Controls</h2>
-          <br>
-          <b>ROTATE:</b><br>
-          ←👆🏼→ or •👆🏼•<br>Swipe or tap left/right<br>
-          ←⌨️→<br>Left / Right arrows<br><br><br><br>
-          <b>USE POWERUP:</b><br>
-          🔲👆🏼🔲<br>Press the powerup's button<br>
-          1️⃣⌨️2️⃣<br>Press 1 or 2<br><br><br><br>
-          <b>AERIAL VIEW:</b><br>
-          👆🏼↓<br>Swipe and hold down<br>
-          ⌨️↓<br>Down arrow (hold)<br><br>
+
+        <div class="tabdiv">
+          <p align="center" class="tablinkholder">
+            <button class="tablinks custom-button-active" onclick="showTabContent(event, 'Overview')">📖<div class="desktop-only"> Overview</div></button>
+            <button class="tablinks custom-button" onclick="showTabContent(event, 'Controls')">👆️<div class="desktop-only"> Controls</div></button>
+            <button class="tablinks custom-button" onclick="showTabContent(event, 'PatchNotes')">📝<div class="desktop-only"> Patch Notes</div></button>
+          </p>
+
+          <div id="Overview" class="tabcontent" style="display: block">
+            <div class="mobile-only" align="center"><br><h3>Overview</h3></div>
+            <br>
+            <p align="center">(the APK works better; download below)</p>
+            <p>An Android-port-in-progress of an arcade puzzle game I made in 2020.The aim is to survive for as many steps as possible. If even one attack from the totem hits you through the ring of barriers, you are af!</p>
+            <p>Details about the different attacks and powerups can be found by pressing the in-game ℹ️ button.</p>
+            <br>
+            <p>Every 24 hours, the game gets a new daily seed and daily leaderboard. If you play the game for a bit and refresh the page, you'll see your username pop up on the sidebar to the left!</p>
+            <br>
+
+            <hr>
+
+            <br>
+            <p align="center">
+              <a href="/projects/games/digital/10-steps-ahead/downloads/10 Steps Ahead.apk" style="text-decoration: none;">
+                <button class="custom-button">
+                  📥️<br>Download APK
+                </button>
+              </a>
+            </p>
+            <br>
+
+          </div>
+
+          <div id="Controls" class="tabcontent" style="display: hidden">
+            <div class="mobile-only" align="center"><br><h3>Controls</h3></div>
+            <br>
+            <div align="center">
+              <br>
+              <b>ROTATE:</b><br>
+              ←👆️→ or •👆️•<br>Swipe or tap left/right<br>
+              ←⌨️→<br>Left / Right arrows<br><br><hr><br><br>
+              <b>USE POWERUP:</b><br>
+              👆️<br>Press the powerup's button<br>
+              1️⃣⌨️2️⃣<br>Press 1 or 2<br><br><hr><br><br>
+              <b>AERIAL VIEW:</b><br>
+              👆️↓<br>Swipe and hold down<br>
+              ⌨️↓<br>Down arrow (hold)<br><br><br>
+            </div>
+          </div>
+
+          <div id="PatchNotes" class="tabcontent" style="display: hidden">
+            <div class="mobile-only" align="center"><br><h3>Patch Notes</h3></div>
+
+            <br><p><b>05/06/2026</b>
+            <ul class="bulletList">
+              <li>Deleted barriers now leave behind a more clear visual indicator</li>
+            </ul>
+
+            <br>
+            <hr>
+            
+            <br><p><b>04/06/2026</b>
+            <ul class="bulletList">
+              <li>Added the Delete Beam</li>
+            </ul>
+            <p>After about 400 steps, all totem block and powerup variations will have shown up multiple times, and the game starts feeling a bit repetitive. To add some more strategic depth, the new Delete Beam - which starts spawning after 250 steps - *permanently* destroys a barrier every ~50 steps. This means you'll have to make lasting decisions about the layout of the field.<br><br>It is now <i>actually</i> difficult to reach 500, which speeds up the game nicely!</p>
+
+            <br>
+          </div>
+
         </div>
-        <br>
-
-        <hr>
 
         <br>
-        <p align="center">
-          <a href="/projects/games/digital/10-steps-ahead/downloads/10 Steps Ahead.apk" style="text-decoration: none;">
-            <button class="custom-button">
-              📥️<br>Download APK
-            </button>
-          </a>
-        </p>
-        <br>
-
-        <!-- <br>
-        <p align="center"><b>← Highscores</b></p>
-        <br> -->
-
         <hr>
         <br>
+
         <h2 align="center">My Contribution Highlights</h2>
 
         <div class="tabdiv">
           <p align="center" class="tablinkholder">
-            <button class="tablinks custom-button-active" onclick="showTabContent(event, 'Design')">⚙️ Design</button>
-            <button class="tablinks custom-button" onclick="showTabContent(event, 'Coding')">💻️ Programming</button>
-            <button class="tablinks custom-button" onclick="showTabContent(event, 'UX Design')">🎛️ UX Design</button>
-            <button class="tablinks custom-button" onclick="showTabContent(event, 'What if')">🔮 What if...</button>
+            <button class="tablinks custom-button" onclick="showTabContent(event, 'Design')">⚙️<div class="desktop-only"> Design</div></button>
+            <button class="tablinks custom-button" onclick="showTabContent(event, 'UXDesign')">🎛️<div class="desktop-only"> UX Design</div></button>
+            <button class="tablinks custom-button" onclick="showTabContent(event, 'WhatIf')">🔮<div class="desktop-only"> What if...</div></button>
           </p>
+
           <div id="Design" class="tabcontent" style="display: block">
-            <h4>Design</h3>
+            <h4>Design</h4>
             <p>TBA</p>
             <p>You can find the 2020 version of this game on <a href="https://daniel-meyer.itch.io/10-steps-ahead" target="_blank">my itch page</a>.</p>
             <br>
           </div>
 
-          <div id="Coding" class="tabcontent">
-            <h4>Programming</h3>
+          <div id="UXDesign" class="tabcontent" style="display: hidden">
+            <h4>UX Design</h4>
             <p>TBA</p>
           </div>
 
-          <div id="UX Design" class="tabcontent">
-            <h4>UX Design</h3>
-            <p>TBA</p>
-          </div>
-
-          <div id="What if" class="tabcontent">
+          <div id="WhatIf" class="tabcontent" style="display: hidden">
             <p>...I had an extra 2 years to work on this project, with an infinite budget?</p> 
           </div>
         </div>

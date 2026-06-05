@@ -408,6 +408,22 @@ post-content {
     padding-top: 0px;
 }
 
+.bulletList {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.bulletList li {
+  padding-left: 1em;
+  text-indent: -0.5em;
+}
+
+.bulletList li:before {
+  content: "•";
+  padding-right: 5px;
+}
+
 .contentFilterList li {
     /*margin-left: 20px*/
 }
