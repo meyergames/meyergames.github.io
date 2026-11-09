@@ -7,13 +7,17 @@
 
 @font-face {
     font-family: 'FontHeader';
-    src: url('index_files/fonts/pixellari/Pixellari.ttf');
+    src: url('index_files/fonts/Alkhemikal.ttf');
+    /*src: url('index_files/fonts/pixellari/Pixellari.ttf');*/
 }
 
 @font-face {
     font-family: 'FontBread';
-    src: url('index_files/fonts/pixel operator/PixelOperator.ttf');
-    /*src: url('index_files/fonts/pixelplay/pixelplay.ttf');*/
+    /*src: url('index_files/fonts/GrapeSoda.ttf');*/
+    /*src: url('index_files/fonts/fs-hakumo-font/FsHakumoRegular-V49Ky.ttf');*/
+    /*src: url('index_files/fonts/pixel operator/PixelOperator.ttf');*/
+    src: url('index_files/fonts/Dico.ttf');
+    /*src: url('index_files/fonts/fs-hakumo-font/FsHakumoRegular-V49Ky.ttf');*/
 }
 
 :root {
@@ -126,6 +130,7 @@ body.loaded {
     cursor: pointer;
     background-color: var(--colour-bg);
     font-family: FontBread;
+    /*letter-spacing: 2px;*/
     color: var(--colour-item-text-desc);
     font-size: 24px;
     padding: 12px;
@@ -154,6 +159,7 @@ tag-container {
     background-color: var(--colour-text);
     border-radius: 12px;
     font-family: FontBread;
+    /*letter-spacing: 2px;*/
     color: var(--colour-item-text-desc);
     round: true;
     font-size: 18px;
@@ -178,6 +184,8 @@ tag-container {
 
 body {
     font-family: FontBread;
+    /*letter-spacing: 2px;*/
+    /*line-height: 27px;*/
     font-size: 24px;
     background-image: url('/index_files/bg2.png');
     background-position-x: center;
@@ -194,6 +202,10 @@ body {
         /*background-position-y: -60px;*/
         background-size: 500px;
     }
+}
+
+p {
+    line-height: 1.4;
 }
 
 .showme p {
@@ -299,6 +311,7 @@ h1 {
     text-align: center;
     /*border: 1px solid var(--colour-darken-10);*/
     background-color: var(--colour-darken-10);
+    padding: 10px;
 }
 
 .highscoreTopRows td {
@@ -389,7 +402,8 @@ post {
 }
 
 post.filterable {
-    padding: 0px;
+    padding-left: 24px;
+    padding-right: 24px;
 }
 
 .tileHolder {
@@ -473,6 +487,7 @@ post-content {
 
 .postbar-title {
     /*position: absolute;*/
+    font-family: FontHeader;
     margin-top: -2rem;
     /*top: 2.5rem;*/
     margin-left: 3.5rem;
@@ -646,14 +661,22 @@ header-bar {
     /*background: 1px solid var(--colour-lighten-25);*/
     background: 1px solid var(--colour-item-bg);
     border-bottom: 2px solid var(--colour-darken-10);
+    height: 50px;
 }
 
 .tile-header h2 {
-    font-size: 24px;
+    font-size: 22px;
     width: 100%;
     text-align: center;
-    overflow: clip;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    /*overflow: clip;*/
     /*height: 56px;*/
+}
+
+.tile-header p {
+    padding-left: 10px;
 }
 
 @media (max-width: 768px) {
@@ -764,7 +787,7 @@ column .sidebar {
 .sidebar ul {
     list-style-type: none;
     padding: 0px;
-    letter-spacing: 0px;
+    /*letter-spacing: 2px;*/
 }
 
 .nav-arrow {
