@@ -186,7 +186,7 @@ body {
     font-family: FontBread;
     /*letter-spacing: 2px;*/
     /*line-height: 27px;*/
-    font-size: 24px;
+    font-size: 20px;
     background-image: url('/index_files/bg2.png');
     background-position-x: center;
     /*background-position-y: 76px;*/
@@ -438,7 +438,9 @@ post-content {
   padding-right: 5px;
 }
 
-.contentFilterList li {
+li {
+    padding-top: 4px;
+    padding-bottom: 4px;
     /*margin-left: 20px*/
 }
 
@@ -480,7 +482,7 @@ post-content {
 .postbar-cat {
     position: absolute;
     margin-top: 0rem;
-    left: 3.5rem;
+    left: 4rem;
     font-weight: bold;
     color: var(--colour-darken-25);
 }
@@ -490,7 +492,7 @@ post-content {
     font-family: FontHeader;
     margin-top: -2rem;
     /*top: 2.5rem;*/
-    margin-left: 3.5rem;
+    margin-left: 4rem;
 }
 
 .postbar-icon {
@@ -558,6 +560,7 @@ post-content {
 .postbar h2 {
     /*float: left;*/
     /*height: 100%;*/
+    font-size: 36px;
     width: 90%;
     cursor: pointer;
 }
